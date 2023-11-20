@@ -1,0 +1,30 @@
+{
+  "name": "semester-project2",
+  "version": "0.0.1",
+  "description": "A retro auction site for vintage LP's",
+  "type": "module",
+  "main": "scripts/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Murots/Semester-project2.git"
+  },
+  "keywords": [
+    "ccs",
+    "bootstrap",
+    "sass",
+    "js",
+    "html",
+    "website",
+    "auction",
+    "lp"
+  ],
+  "author": "Aleksander Storum <AleSto95654@stud.noroff.no>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Murots/Semester-project2/issues"
+  },
+  "homepage": "https://github.com/Murots/Semester-project2#readme"
+}
