@@ -41,27 +41,29 @@ p {
   background-color: $link-color;
 }
 
-.carousel-container {
+.banner-container {
   background-color: $primary;
-  #carouselExampleIndicators {
-    max-width: 600px;
-    max-height: 600px;
-    width: 100vw;
-    height: 100vw;
-    img {
-      object-fit: cover;
+  .row {
+    max-width: 1100px;
+    #carouselExampleIndicators {
       max-width: 600px;
       max-height: 600px;
-      width: 100%;
-      // filter: sepia(75%);
-      // filter: brightness(70%);
-      // filter: saturate(50%);
-      filter: sepia(60%) hue-rotate(20deg) brightness(110%);
-      // filter: sepia(100%) hue-rotate(25deg) brightness(110%);
-    }
-    .custom-carousel-caption {
-      top: 15%;
-      bottom: auto;
+      height: 100vw;
+      img {
+        object-fit: cover;
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        // filter: sepia(75%);
+        // filter: brightness(70%);
+        // filter: saturate(50%);
+        filter: sepia(60%) hue-rotate(20deg) brightness(110%);
+        // filter: sepia(100%) hue-rotate(25deg) brightness(110%);
+      }
+      .custom-carousel-caption {
+        top: 15%;
+        bottom: auto;
+      }
     }
   }
 }

@@ -11884,23 +11884,25 @@ p {
   background-color: #8e2c48;
 }
 
-.carousel-container {
+.banner-container {
   background-color: #ffdc60;
 }
-.carousel-container #carouselExampleIndicators {
+.banner-container .row {
+  max-width: 1100px;
+}
+.banner-container .row #carouselExampleIndicators {
   max-width: 600px;
   max-height: 600px;
-  width: 100vw;
   height: 100vw;
 }
-.carousel-container #carouselExampleIndicators img {
+.banner-container .row #carouselExampleIndicators img {
   object-fit: cover;
   max-width: 600px;
   max-height: 600px;
   width: 100%;
   filter: sepia(60%) hue-rotate(20deg) brightness(110%);
 }
-.carousel-container #carouselExampleIndicators .custom-carousel-caption {
+.banner-container .row #carouselExampleIndicators .custom-carousel-caption {
   top: 15%;
   bottom: auto;
 }
