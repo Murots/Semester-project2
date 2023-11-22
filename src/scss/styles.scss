@@ -1,0 +1,67 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  // display: flex;
+  // flex-direction: column;
+  height: 100vh;
+  // margin: 100px;
+}
+
+// h1=fs-1, h2=fs-2, h3,h4=fs-3, h5 = fs-5?,
+
+h1,
+h2,
+h4 {
+  font-family: "Lobster", sans-serif;
+  color: $link-color;
+}
+
+h3 {
+  font-family: "Monoton", sans-serif;
+  letter-spacing: 1px;
+  text-shadow:
+    0.5px 0px 0 #ffffff,
+    0.5px 0.5px 0 #ffffff,
+    0.5px -0.5px 0 #ffffff,
+    0px -0.5px 0 #ffffff,
+    0px 0.5px 0 #ffffff,
+    -0.5px 0.5px 0 #ffffff,
+    -0.5px 0px 0 #ffffff,
+    -0.5px -0.5px 0 #ffffff;
+}
+
+h5,
+p {
+  font-family: "Libre Baskerville", serif;
+}
+
+.nav-link.sign-in {
+  color: $white;
+  background-color: $link-color;
+}
+
+.carousel-container {
+  background-color: $primary;
+  #carouselExampleIndicators {
+    max-width: 600px;
+    max-height: 600px;
+    width: 100vw;
+    height: 100vw;
+    img {
+      object-fit: cover;
+      max-width: 600px;
+      max-height: 600px;
+      width: 100%;
+      // filter: sepia(75%);
+      // filter: brightness(70%);
+      // filter: saturate(50%);
+      filter: sepia(60%) hue-rotate(20deg) brightness(110%);
+      // filter: sepia(100%) hue-rotate(25deg) brightness(110%);
+    }
+    .custom-carousel-caption {
+      top: 15%;
+      bottom: auto;
+    }
+  }
+}
