@@ -11875,7 +11875,8 @@ h3, .h3 {
 }
 
 h5, .h5,
-p {
+p,
+li {
   font-family: "Libre Baskerville", serif;
 }
 
@@ -11884,25 +11885,26 @@ p {
   background-color: #8e2c48;
 }
 
+.row {
+  max-width: 1100px;
+}
+
 .banner-container {
   background-color: #ffdc60;
 }
-.banner-container .row {
-  max-width: 1100px;
-}
-.banner-container .row #carouselExampleIndicators {
+.banner-container #carouselExampleIndicators {
   max-width: 600px;
   max-height: 600px;
   height: 100vw;
 }
-.banner-container .row #carouselExampleIndicators img {
+.banner-container #carouselExampleIndicators img {
   object-fit: cover;
   max-width: 600px;
   max-height: 600px;
   width: 100%;
   filter: sepia(60%) hue-rotate(20deg) brightness(110%);
 }
-.banner-container .row #carouselExampleIndicators .custom-carousel-caption {
+.banner-container #carouselExampleIndicators .custom-carousel-caption {
   top: 15%;
   bottom: auto;
 }
