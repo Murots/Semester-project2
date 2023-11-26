@@ -11890,6 +11890,10 @@ li {
   max-width: 1100px;
 }
 
+.sign-in-button {
+  max-width: 200px;
+}
+
 .banner-container {
   background-color: #ffdc60;
 }
