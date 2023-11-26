@@ -2,10 +2,7 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
-  // display: flex;
-  // flex-direction: column;
   height: 100vh;
-  // margin: 100px;
 }
 
 // h1=fs-1, h2=fs-2, h3,h4=fs-3, h5 = fs-5?,
@@ -37,7 +34,8 @@ li {
   font-family: "Libre Baskerville", serif;
 }
 
-.nav-link.sign-in {
+.nav-link.sign-in,
+.footer-container {
   color: $white;
   background-color: $link-color;
 }
@@ -68,10 +66,19 @@ li {
 
 .welcome-container {
   img {
-    // border-radius: 50%;
-    width: 100%;
-    max-width: 200px;
-    height: 100%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
+  }
+}
+
+.footer-container {
+  .row {
+    max-width: 100%;
+    height: auto;
+    p {
+      font-size: 0.8em;
+    }
   }
 }

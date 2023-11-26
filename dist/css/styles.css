@@ -11880,7 +11880,8 @@ li {
   font-family: "Libre Baskerville", serif;
 }
 
-.nav-link.sign-in {
+.nav-link.sign-in,
+.footer-container {
   color: #fff;
   background-color: #8e2c48;
 }
@@ -11910,10 +11911,18 @@ li {
 }
 
 .welcome-container img {
-  width: 100%;
-  max-width: 200px;
-  height: 100%;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
+}
+
+.footer-container .row {
+  max-width: 100%;
+  height: auto;
+}
+.footer-container .row p {
+  font-size: 0.8em;
 }
 
 /*# sourceMappingURL=styles.css.map */
