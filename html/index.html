@@ -39,10 +39,39 @@
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Please sign in</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body">
+              <form id="form-signin" class="form-signin" action="profile/index.html">
+                <input type="email" id="inputEmail" class="mb-2 form-control" placeholder="Email address" aria-label="Email" required="" autofocus="" />
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" aria-label="Password" required="" minlength="8" />
+              </form>
+              <div class="text-center register-link">
+                <p class="mt-5">Or click <button class="btn text-info fw-bold pt-0 px-0 pb-1" data-bs-target="#register-modal" data-bs-toggle="modal">here</button> to create an account</p>
+              </div>
+            </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Sign in</button>
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-info" id="staticBackdropLabel">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="form-signin" class="form-signin" action="profile/index.html">
+                <input type="text" id="inputUsername" class="mb-2 form-control" placeholder="Username" aria-label="Username" required="" minlength="3" />
+                <input type="email" id="inputEmail" class="mb-2 form-control" placeholder="Email address" aria-label="Email" required="" autofocus="" />
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" aria-label="Password" required="" minlength="8" />
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-info">Register</button>
             </div>
           </div>
         </div>

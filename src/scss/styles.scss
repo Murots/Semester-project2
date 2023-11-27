@@ -35,18 +35,11 @@ li {
   font-family: "Libre Baskerville", serif;
 }
 
-// .sign-in-button,
-// .footer-container {
-//   color: $white;
-//   background-color: $primary;
-// }
-
 .row {
   max-width: 1100px;
 }
 
 .banner-container {
-  // background-color: $primary;
   #carouselExampleIndicators {
     max-width: 600px;
     max-height: 600px;
@@ -82,4 +75,8 @@ li {
       font-size: 0.8em;
     }
   }
+}
+
+.register-link {
+  font-size: 0.9em;
 }
