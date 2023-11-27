@@ -11856,7 +11856,7 @@ textarea.form-control-lg {
   }
 }
 body {
-  height: 100vh;
+  padding-top: 80px;
 }
 
 h1, .h1,
@@ -11880,7 +11880,7 @@ li {
   font-family: "Libre Baskerville", serif;
 }
 
-.nav-link.sign-in,
+.sign-in-button,
 .footer-container {
   color: #fff;
   background-color: #8e2c48;
@@ -11888,10 +11888,6 @@ li {
 
 .row {
   max-width: 1100px;
-}
-
-.sign-in-button {
-  max-width: 200px;
 }
 
 .banner-container {

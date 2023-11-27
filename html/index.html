@@ -15,23 +15,38 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top py-3">
-        <div class="container-fluid">
+      <nav class="navbar navbar-expand-md bg-body fixed-top py-3">
+        <div class="container-fluid nav-content-container">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="navbar-collapse collapse show fs-3" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link h4 my-2" aria-current="page" href="#">Auctions</a>
+                <a class="nav-link h4 p-0 my-2 my-md-0" aria-current="page" href="#">Auctions</a>
               </li>
             </ul>
-            <a class="nav-link btn h4 sign-in my-2 sign-in-button px-3" href="#">Sign in</a>
+            <button type="button" class="btn sign-in-button h4 fs-3 mb-0 mt-2 mt-md-0 py-0" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
           </div>
         </div>
       </nav>
     </header>
     <main>
+      <div class="modal fade" id="sign-in-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="banner-container">
         <div class="row d-flex align-items-center m-0 m-lg-auto">
           <div class="col-lg-4 d-none d-lg-block">
