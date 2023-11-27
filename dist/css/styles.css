@@ -11916,8 +11916,31 @@ li {
   font-size: 0.8em;
 }
 
-.register-link {
+.register-link,
+.error,
+.success {
   font-size: 0.9em;
+}
+
+.error,
+.success {
+  border: 2px solid;
+  height: fit-content;
+}
+
+.error {
+  background-color: rgba(143, 40, 40, 0.3019607843);
+  color: #810000;
+  border-color: #810000;
+}
+
+.success {
+  background-color: #c6f7c6;
+  border-color: #008000;
+}
+
+.here-link:hover {
+  color: red;
 }
 
 /*# sourceMappingURL=styles.css.map */
