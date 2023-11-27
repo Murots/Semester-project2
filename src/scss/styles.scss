@@ -12,7 +12,7 @@ h1,
 h2,
 h4 {
   font-family: "Lobster", sans-serif;
-  color: $link-color;
+  color: $primary;
 }
 
 h3 {
@@ -35,18 +35,18 @@ li {
   font-family: "Libre Baskerville", serif;
 }
 
-.sign-in-button,
-.footer-container {
-  color: $white;
-  background-color: $link-color;
-}
+// .sign-in-button,
+// .footer-container {
+//   color: $white;
+//   background-color: $primary;
+// }
 
 .row {
   max-width: 1100px;
 }
 
 .banner-container {
-  background-color: $primary;
+  // background-color: $primary;
   #carouselExampleIndicators {
     max-width: 600px;
     max-height: 600px;
