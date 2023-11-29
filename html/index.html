@@ -13,6 +13,7 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../scripts/register.mjs" type="module"></script>
     <script src="../scripts/signin.mjs" type="module"></script>
+    <script src="../scripts/components/contentAccess.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -21,13 +22,19 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="navbar-collapse collapse show fs-3" id="navbarCollapse">
+          <div class="navbar-collapse collapse show fs-4" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link h4 p-0 my-2 my-md-0" aria-current="page" href="#">Auctions</a>
-              </li>
+              <a class="nav-link h4 p-0 my-2 my-md-0 me-md-5" aria-current="page" href="#">Auctions</a>
+              <a class="nav-link h4 p-0 my-2 my-md-0 ms-md-5 d-none" id="nav-new" aria-current="page" href="#"
+                >New listing <img src="../icons/gridicons_add-outline.png" class="pb-2" alt="Add new symbol"
+              /></a>
             </ul>
-            <button type="button" class="btn bg-primary text-white h4 fs-3 mb-0 mt-2 mt-md-0 py-0" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
+            <button type="button" class="btn bg-primary text-white h4 fs-4 mb-0 mt-2 mt-md-0 py-0" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
+            <div class="d-none align-items-center my-2 my-md-0" id="nav-profile">
+              <img src="../images/Default-profile.png" class="rounded-circle" alt="Default profile avatar" />
+              <a class="nav-link h4 ps-2 my-2 my-md-0" id="nav-name" aria-current="page" href="#"></a>
+              <h4 class="h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white">XXXX €</h4>
+            </div>
           </div>
         </div>
       </nav>
