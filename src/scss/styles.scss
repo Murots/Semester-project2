@@ -31,12 +31,25 @@ h3 {
 
 h5,
 p,
-li {
+li,
+#sort-by-form {
   font-family: "Libre Baskerville", serif;
 }
 
 .row {
   max-width: 1100px;
+}
+
+#nav-profile {
+  img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: $body-color;
+  }
+  h4 {
+    border-radius: 0.375rem;
+  }
 }
 
 .banner-container {
@@ -56,9 +69,14 @@ li {
       bottom: auto;
     }
   }
+  .alternative-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+  }
 }
 
-.welcome-container {
+.main-container {
   img {
     border-radius: 50%;
     width: 200px;
@@ -104,14 +122,11 @@ li {
   color: red;
 }
 
-#nav-profile {
-  img {
-    width: 40px;
-    height: 40px;
-    border: 1px solid;
-    border-color: $body-color;
-  }
-  h4 {
-    border-radius: 0.375rem;
-  }
-}
+// .input-group {
+//   max-width: 200px;
+// }
+
+// .alternative-logo {
+//   max-width: 100%;
+//   height: auto;
+// }
