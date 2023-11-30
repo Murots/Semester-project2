@@ -1,6 +1,6 @@
 {
   "name": "semester-project2",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A retro auction site for vintage LP's",
   "type": "module",
   "main": "scripts/index.js",

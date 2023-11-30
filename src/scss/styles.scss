@@ -2,7 +2,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
-  height: 100vh;
+  // height: 100vh;
+  padding-top: 80px;
 }
 
 // h1=fs-1, h2=fs-2, h3,h4=fs-3, h5 = fs-5?,
@@ -11,7 +12,7 @@ h1,
 h2,
 h4 {
   font-family: "Lobster", sans-serif;
-  color: $link-color;
+  color: $primary;
 }
 
 h3 {
@@ -30,26 +31,28 @@ h3 {
 
 h5,
 p,
-li {
+li,
+#sort-by-form {
   font-family: "Libre Baskerville", serif;
-}
-
-.nav-link.sign-in,
-.footer-container {
-  color: $white;
-  background-color: $link-color;
 }
 
 .row {
   max-width: 1100px;
 }
 
-.sign-in-button {
-  max-width: 200px;
+#nav-profile {
+  img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: $body-color;
+  }
+  h4 {
+    border-radius: 0.375rem;
+  }
 }
 
 .banner-container {
-  background-color: $primary;
   #carouselExampleIndicators {
     max-width: 600px;
     max-height: 600px;
@@ -66,9 +69,14 @@ li {
       bottom: auto;
     }
   }
+  .alternative-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+  }
 }
 
-.welcome-container {
+.main-container {
   img {
     border-radius: 50%;
     width: 200px;
@@ -86,3 +94,39 @@ li {
     }
   }
 }
+
+.register-link,
+.error,
+.success {
+  font-size: 0.9em;
+}
+
+.error,
+.success {
+  border: 2px solid;
+  height: fit-content;
+}
+
+.error {
+  background-color: #8f28284d;
+  color: #810000;
+  border-color: #810000;
+}
+
+.success {
+  background-color: #c6f7c6;
+  border-color: #008000;
+}
+
+.here-link:hover {
+  color: red;
+}
+
+// .input-group {
+//   max-width: 200px;
+// }
+
+// .alternative-logo {
+//   max-width: 100%;
+//   height: auto;
+// }
