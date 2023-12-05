@@ -1,5 +1,5 @@
-import { signInURL } from "./constants.mjs";
-import { errorFeedback } from "./components/errorFeedback.mjs";
+import { signInURL } from "./libraries/constants.mjs";
+import { errorFeedback } from "./libraries/errorFeedback.mjs";
 
 const signInForm = document.getElementById("form-sign-in");
 
