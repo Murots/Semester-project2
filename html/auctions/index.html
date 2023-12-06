@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Home | OLD SCHOOL AUCTIONS</title>
+    <meta name="description" content="Welcome to our beloved auction site, Old School Auction, where you can explore, bid, buy and sell vintage lp's." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../scripts/register.mjs" type="module"></script>
+    <script src="../../scripts/signin.mjs" type="module"></script>
+    <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-body fixed-top py-3">
+        <div class="container-fluid nav-content-container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show fs-4" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <a class="nav-link h4 p-0 my-2 my-md-0 me-md-5" aria-current="page" href="../../html/index.html">Home</a>
+              <a class="nav-link h4 p-0 my-2 my-md-0 ms-md-5 d-none" id="nav-new" aria-current="page" href="../new-listing/index.html"
+                >New listing<img src="../../icons/gridicons_add-outline.png" class="pb-2 ps-1" alt="Add new symbol"
+              /></a>
+            </ul>
+            <button type="button" class="btn bg-primary text-white h4 fs-4 mb-0 mt-2 mt-md-0 py-0" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
+            <div class="d-none align-items-center my-2 my-md-0" id="nav-profile">
+              <img src="../../images/Default-profile.png" class="rounded-circle" alt="Default profile avatar" />
+              <a class="nav-link h4 ps-2 my-2 my-md-0" id="nav-name" aria-current="page" href="../profile/index.html"></a>
+              <h4 class="h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white">XXXX €</h4>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="modal fade" id="sign-in-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Please sign in</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form-sign-in">
+              <div class="modal-body">
+                <input type="email" id="sign-inEmail" class="mb-2 form-control" placeholder="Email address" aria-label="Email" required="" autofocus="" />
+                <input type="password" id="sign-inPassword" class="form-control" placeholder="Password" aria-label="Password" required="" minlength="8" />
+                <div class="text-center register-link">
+                  <p class="mt-5">Or click <button class="btn text-info fw-bold pt-0 px-0 pb-1" data-bs-target="#register-modal" data-bs-toggle="modal">here</button> to create an account</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="register-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-info" id="staticBackdropLabel">Register</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form-register">
+              <div class="modal-body">
+                <input type="text" id="registerUsername" class="mb-2 form-control" placeholder="Username" aria-label="Username" required="" minlength="3" />
+                <input type="email" id="registerEmail" class="mb-2 form-control" placeholder="Email address" aria-label="Email" required="" autofocus="" />
+                <input type="password" id="registerPassword" class="form-control" placeholder="Password" aria-label="Password" required="" minlength="8" />
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-info">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="banner-container bg-secondary">
+        <div class="row d-flex align-items-end m-0 m-lg-auto">
+          <div class="col-5 col-lg-5">
+            <img src="../../images/Logo2.png" class="alternative-logo" alt="Yellow Old School Auction logo" />
+          </div>
+          <div class="col-7">
+            <div class="row">
+              <div class="col-12 col-sm-4 btn-group pb-3 pb-sm-5">
+                <select id="sort-by-form" class="form-select bg-info" aria-label="Default select example">
+                  <option value="All" selected>Filter by: All</option>
+                  <option value="Rock">Rock</option>
+                  <option value="Pop">Pop</option>
+                  <option value="Hip-Hop">Hip-Hop</option>
+                  <option value="Soul">Soul</option>
+                </select>
+              </div>
+              <div class="col-12 col-sm-8 pb-3 pb-sm-5">
+                <div class="input-group">
+                  <input id="search-field" type="text" class="form-control" placeholder="Search..." />
+                  <button id="search-button" class="btn btn-info d-flex align-items-center" type="button"><img src="../../icons/Search.png" alt="Search icon" /></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="main-container my-5">
+        <div class="row mx-0 mx-lg-auto pt-5">
+          <h1>Auction list</h1>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container bg-primary text-white pt-4">
+        <div class="row mx-0 mx-lg-auto">
+          <div class="col-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p class="">Connect with us:</p>
+              <div class="d-flex justify-content-between">
+                <a href="https://www.instagram.com/accounts/login/"><img src="../../icons/Instagram.png" alt="Link to Instagram" /></a>
+                <a href="https://www.facebook.com/login/"><img src="../../icons/Facebook.png" alt="Link to Facebook" /></a>
+                <a href="https://n9.cl/6vti2"><img src="../../icons/Youtube.png" alt="Link to Youtube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-lg-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p>support@old-school.com</p>
+              <p>+47 xxx xx xxx</p>
+              <p>Dokka, 1671 Fredrikstad, Norway</p>
+            </div>
+          </div>
+          <div class="d-none d-lg-flex col-lg-4 justify-content-center">
+            <img class="img-fluid" src="../../images/Group 32.png" alt="Footer art" />
+          </div>
+        </div>
+        <hr class="my-0" />
+        <div class="row text-center">
+          <p class="my-2">Copyright &copy; 2023 - Old School Auctions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
