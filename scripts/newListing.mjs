@@ -1,4 +1,5 @@
-// import { postListingURL } from "./libraries/constants.mjs";
+import { fetchWithToken } from "./services/doFetch.mjs";
+import { postListingURL } from "./libraries/constants.mjs";
 import { addImageCard } from "./components/createItemAlbum.mjs";
 
 const newListingForm = document.getElementById("form-new-listing");
@@ -40,10 +41,11 @@ function createListingData(event) {
   const genre = selectedGenre.value;
 
   const cards = document.querySelectorAll("#imageCardGroup .card");
-  const allMedia = {};
+  const media = [];
 
-  cards.forEach((card, index) => {
-    allMedia[`link${index}`] = card.getAttribute("data-image-link");
+  cards.forEach((card) => {
+    const linkToImage = card.getAttribute("data-image-link");
+    media.push(linkToImage);
   });
 
   const dataToList = {
@@ -51,32 +53,31 @@ function createListingData(event) {
     description: JSON.stringify(descriptionObject),
     endsAt: `${deadlineDate}T${deadlineTime}:00.000Z`,
     tags: ["OldSchoolAuctions", genre],
-    media: JSON.stringify(allMedia),
+    media,
   };
 
-  // savePost(allPostsByTitle, dataToPost);
-  console.log(dataToList);
+  saveListing(postListingURL, dataToList);
 }
 
 newListingForm.addEventListener("submit", createListingData);
 
-// /**
-//  * Saves a post to the server.
-//  * @param {string} url
-//  * @param {object} postData
-//  * @returns {void}
-//  * @example
-//  * const url = "https://example.com/api/posts";
-//  * const postData = { title: "My Post", body: "This is my post content", tags: ["tag1"] };
-//  * savePost(url, postData);
-//  */
-// async function savePost(url, postData) {
-//   try {
-//     const json = await fetchWithToken(url, "POST", postData);
-//     if (json) {
-//       location.reload();
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
+/**
+ * Saves a listing to the server.
+ * @param {string} url
+ * @param {object} listingData
+ * @returns {void}
+ * @example
+ * const url = "https://example.com/api/listings";
+ * const listingData = { title: "Example title", description: "This is the description of my LP album", endsAt: "2023-12-04T13:01:55.422Z", tags: ["tag1", "tag2"] }, media: "Link to image";
+ * saveListing(url, listingData);
+ */
+async function saveListing(url, listingData) {
+  try {
+    const json = await fetchWithToken(url, "POST", listingData);
+    if (json) {
+      // location.reload();
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
