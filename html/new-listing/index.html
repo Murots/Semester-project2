@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Home | OLD SCHOOL AUCTIONS</title>
+    <meta name="description" content="Welcome to our beloved auction site, Old School Auction, where you can explore, bid, buy and sell vintage lp's." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../../scripts/newListing.mjs" type="module"></script>
+    <script src="../../scripts/components/createItemAlbum.mjs" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-body fixed-top py-3">
+        <div class="container-fluid nav-content-container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show fs-4" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <a class="nav-link h4 p-0 my-2 my-md-0 me-md-5" aria-current="page" href="../../html/index.html">Home</a>
+              <a class="nav-link h4 p-0 my-2 my-md-0 ms-md-5 d-none" id="nav-new" aria-current="page" href="../auction/index.html">Auction</a>
+            </ul>
+            <button type="button" class="btn bg-primary text-white h4 fs-4 mb-0 mt-2 mt-md-0 py-0" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
+            <div class="d-none align-items-center my-2 my-md-0" id="nav-profile">
+              <img src="../../images/Default-profile.png" class="rounded-circle" alt="Default profile avatar" />
+              <a class="nav-link h4 ps-2 my-2 my-md-0" id="nav-name" aria-current="page" href="#"></a>
+              <h4 class="h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white">XXXX €</h4>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="banner-container bg-white">
+        <div class="row d-flex align-items-end m-0 m-lg-auto">
+          <div class="col-5 col-lg-5">
+            <img src="../../images/Logo3.png" class="alternative-logo" alt="Grey Old School Auction logo" />
+          </div>
+        </div>
+      </div>
+      <section class="main-container py-5 bg-primary">
+        <div class="row mx-0 mx-lg-auto pt-5">
+          <h1 class="text-secondary">Create new listing</h1>
+        </div>
+        <div class="row mx-0 mx-lg-auto mt-3 px-lg-5 py-5 bg-white">
+          <div class="col-12">
+            <h5 class="fw-bold mb-4">Item description:</h5>
+            <form id="form-new-listing">
+              <input type="text" id="inputTitle" class="mb-2 form-control" placeholder="Album Title" aria-label="Title" required="" autofocus="" />
+              <input type="text" id="inputArtist" class="mb-2 form-control" placeholder="Album Artist" aria-label="Artist" required="" autofocus="" />
+              <input type="number" id="inputRelease" class="mb-2 form-control" placeholder="Album Release Year" aria-label="Release year" min="1900" max="2099" required autofocus />
+              <input type="text" id="inputLabel" class="mb-4 form-control" placeholder="Album Record Label" aria-label="Record label" required="" autofocus="" />
+              <!-- <textarea id="inputCondition" class="form-control mb-4" rows="5" placeholder="Album Condition" maxlength="400" aria-label="Condition" required="" autofocus=""></textarea> -->
+              <div class="f-flex align-items-center mb-4">
+                <select class="btn bg-secondary" id="selectCondition" class="form-control" aria-label="Condition" required autofocus>
+                  <option value="">Condition</option>
+                  <option value="Poor">Poor</option>
+                  <option value="Fair">Fair</option>
+                  <option value="Good">Good</option>
+                  <option value="Very Good">Very Good</option>
+                  <option value="Near Mint">Near Mint</option>
+                  <option value="Mint">Mint (M)</option>
+                </select>
+                <a href="#" class="ms-4" data-bs-toggle="modal" data-bs-target="#gradingHelper">Help?</a>
+                <div class="modal fade" id="gradingHelper" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Condition Scale Helper</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <ol>
+                          <li class="mb-3">
+                            <span class="fw-bold">Poor (P):</span> The record has significant wear, deep scratches, and may skip or have substantial surface noise. The sleeve is heavily damaged, with
+                            tears, discoloration, and possible writing on it.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Fair (F):</span> The record shows noticeable signs of wear, with surface scratches and audible surface noise during playback. The sleeve has
+                            significant wear and may have writing, split seams, or tape.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Good (G):</span> The record has been played frequently, with less luster, noticeable scratches, and may have some surface noise, but no major
+                            distortion. The sleeve shows normal wear and tear but is intact.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Very Good (VG):</span> The record has been handled and played but is well cared for. There may be light scratches that don't affect playback. The
+                            sleeve may have slight wear or creasing, but overall it's in good shape.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Near Mint (NM):</span> The record has been played but shows no signs of deterioration in sound quality. There may be very minor signs of wear. The
+                            sleeve is close to perfect with only minor signs of handling.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Mint (M):</span> The record is in perfect condition. It's likely never been played. The sleeve is pristine, with no creases, ring wear, or other signs
+                            of handling.
+                          </li>
+                        </ol>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-4">
+                <div class="col">
+                  <textarea id="inputTracklistA" class="form-control" rows="5" placeholder="Album Tracklist Side A" maxlength="400" aria-label="Tracklist A" required="" autofocus=""></textarea>
+                </div>
+                <div class="col">
+                  <textarea id="inputTracklistB" class="form-control" rows="5" placeholder="Album Tracklist Side B" maxlength="400" aria-label="Tracklist B" required="" autofocus=""></textarea>
+                </div>
+              </div>
+              <select class="mb-5 btn bg-secondary" id="selectGenre" class="form-control" aria-label="Genre" required autofocus>
+                <option value="">Genre</option>
+                <option value="Pop">Pop</option>
+                <option value="Rock">Rock</option>
+                <option value="Jazz/Funk">Jazz/Funk</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="Blues/RnB">Blues/RnB</option>
+                <option value="Electronica">Electronica</option>
+                <option value="Other">Other</option>
+              </select>
+              <h5 class="fw-bold mb-4">Item Images:</h5>
+              <div class="input-group mb-3">
+                <input id="inputImageLink" type="text" class="form-control" placeholder="Search..." aria-label="Image link" />
+                <button id="add-image-button" class="btn btn-secondary" type="button">Add Image</button>
+              </div>
+              <div class="add-images-container row mb-5">
+                <div class="card-group" id="imageCardGroup"></div>
+              </div>
+              <!-- <div class="row mb-5">
+                <div class="card-group">
+                  <div class="card">
+                    <img
+                      src="https://lh3.googleusercontent.com/pw/ADCreHdpEedmpOuON9fCmABiIf2OSKT0CzAFl5FXnYbrmT5oDCaycaBB2pfoeV8SITltu6b7LfsQocRBNrdF0tiLYR3JSoqTPKh9Meb6gopIVEiB2THp3QgHhOYBmVX128kD5c_2YI2kazhc7te-ZbNAdPoI=w670-h894-s-no-gm?authuser=0"
+                      class="card-img-top"
+                      alt="..."
+                    />
+                    <div class="card-body">
+                      <a href="#" class="card-link">Delete</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <a href="#" class="card-link">Delete</a>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <a href="#" class="card-link">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <h5 class="fw-bold mb-4">Deadline:</h5>
+              <div class="row mb-5">
+                <div class="col">
+                  <input type="date" id="inputDeadlineDate" class="form-control" placeholder="YYYY-MM-DD" aria-label="Deadline date" required="" autofocus="" />
+                </div>
+                <div class="col">
+                  <input type="time" id="inputDeadlineTime" class="form-control" placeholder="HH:MM:SS" aria-label="Deadline time" required="" autofocus="" />
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div class="col-auto d-flex justify-content-center">
+                  <button type="submit" class="btn bg-primary h4 fs-4 text-white px-5 py-0">Create listing</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container bg-primary text-white pt-4">
+        <div class="row mx-0 mx-lg-auto">
+          <div class="col-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p class="">Connect with us:</p>
+              <div class="d-flex justify-content-between">
+                <a href="https://www.instagram.com/accounts/login/"><img src="../../icons/Instagram.png" alt="Link to Instagram" /></a>
+                <a href="https://www.facebook.com/login/"><img src="../../icons/Facebook.png" alt="Link to Facebook" /></a>
+                <a href="https://n9.cl/6vti2"><img src="../../icons/Youtube.png" alt="Link to Youtube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-lg-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p>support@old-school.com</p>
+              <p>+47 xxx xx xxx</p>
+              <p>Dokka, 1671 Fredrikstad, Norway</p>
+            </div>
+          </div>
+          <div class="d-none d-lg-flex col-lg-4 justify-content-center">
+            <img class="img-fluid" src="../../images/Group 32.png" alt="Footer art" />
+          </div>
+        </div>
+        <hr class="my-0" />
+        <div class="row text-center">
+          <p class="my-2">Copyright &copy; 2023 - Old School Auctions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

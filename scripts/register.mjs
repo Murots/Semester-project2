@@ -1,5 +1,5 @@
-import { registerURL } from "./constants.mjs";
-import { errorFeedback } from "./components/errorFeedback.mjs";
+import { registerURL } from "./libraries/constants.mjs";
+import { errorFeedback } from "./libraries/errorFeedback.mjs";
 
 const registerForm = document.getElementById("form-register");
 

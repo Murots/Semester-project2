@@ -77,11 +77,18 @@ li,
 }
 
 .main-container {
-  img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+  .trending-container {
+    img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  .add-images-container {
+    img {
+      max-width: 45vh;
+    }
   }
 }
 

@@ -11917,11 +11917,14 @@ li,
   max-height: 600px;
 }
 
-.main-container img {
+.main-container .trending-container img {
   border-radius: 50%;
   width: 200px;
   height: 200px;
   object-fit: cover;
+}
+.main-container .add-images-container img {
+  max-width: 45vh;
 }
 
 .footer-container .row {
