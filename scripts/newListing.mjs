@@ -19,18 +19,11 @@ function createListingData(event) {
   const artistInput = document.getElementById("inputArtist");
   const releaseInput = document.getElementById("inputRelease");
   const labelInput = document.getElementById("inputLabel");
-  const conditionInput = document.getElementById("inputCondition");
+  const selectedCondition = document.getElementById("selectCondition");
   const tracklistAInput = document.getElementById("inputTracklistA");
   const tracklistBInput = document.getElementById("inputTracklistB");
 
-  const descriptionObject = {
-    artist: artistInput.value,
-    releaseYear: releaseInput.value,
-    recordLabel: labelInput.value,
-    condition: conditionInput.value,
-    tracklistA: tracklistAInput.value,
-    tracklistB: tracklistBInput.value,
-  };
+  const descriptionArray = [artistInput.value, releaseInput.value, labelInput.value, selectedCondition.value, tracklistAInput.value, tracklistBInput.value];
 
   const deadlineDateInput = document.getElementById("inputDeadlineDate");
   const deadlineTimeInput = document.getElementById("inputDeadlineTime");
@@ -50,7 +43,7 @@ function createListingData(event) {
 
   const dataToList = {
     title: titleInput.value,
-    description: JSON.stringify(descriptionObject),
+    description: JSON.stringify(descriptionArray),
     endsAt: `${deadlineDate}T${deadlineTime}:00.000Z`,
     tags: ["OldSchoolAuctions", genre],
     media,

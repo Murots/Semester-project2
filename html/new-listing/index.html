@@ -57,7 +57,60 @@
               <input type="text" id="inputArtist" class="mb-2 form-control" placeholder="Album Artist" aria-label="Artist" required="" autofocus="" />
               <input type="number" id="inputRelease" class="mb-2 form-control" placeholder="Album Release Year" aria-label="Release year" min="1900" max="2099" required autofocus />
               <input type="text" id="inputLabel" class="mb-4 form-control" placeholder="Album Record Label" aria-label="Record label" required="" autofocus="" />
-              <textarea id="inputCondition" class="form-control mb-4" rows="5" placeholder="Album Condition" maxlength="400" aria-label="Condition" required="" autofocus=""></textarea>
+              <!-- <textarea id="inputCondition" class="form-control mb-4" rows="5" placeholder="Album Condition" maxlength="400" aria-label="Condition" required="" autofocus=""></textarea> -->
+              <div class="f-flex align-items-center mb-4">
+                <select class="btn bg-secondary" id="selectCondition" class="form-control" aria-label="Condition" required autofocus>
+                  <option value="">Condition</option>
+                  <option value="Poor">Poor</option>
+                  <option value="Fair">Fair</option>
+                  <option value="Good">Good</option>
+                  <option value="Very Good">Very Good</option>
+                  <option value="Near Mint">Near Mint</option>
+                  <option value="Mint">Mint (M)</option>
+                </select>
+                <a href="#" class="ms-4" data-bs-toggle="modal" data-bs-target="#gradingHelper">Help?</a>
+                <div class="modal fade" id="gradingHelper" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Condition Scale Helper</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <ol>
+                          <li class="mb-3">
+                            <span class="fw-bold">Poor (P):</span> The record has significant wear, deep scratches, and may skip or have substantial surface noise. The sleeve is heavily damaged, with
+                            tears, discoloration, and possible writing on it.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Fair (F):</span> The record shows noticeable signs of wear, with surface scratches and audible surface noise during playback. The sleeve has
+                            significant wear and may have writing, split seams, or tape.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Good (G):</span> The record has been played frequently, with less luster, noticeable scratches, and may have some surface noise, but no major
+                            distortion. The sleeve shows normal wear and tear but is intact.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Very Good (VG):</span> The record has been handled and played but is well cared for. There may be light scratches that don't affect playback. The
+                            sleeve may have slight wear or creasing, but overall it's in good shape.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Near Mint (NM):</span> The record has been played but shows no signs of deterioration in sound quality. There may be very minor signs of wear. The
+                            sleeve is close to perfect with only minor signs of handling.
+                          </li>
+                          <li class="mb-3">
+                            <span class="fw-bold">Mint (M):</span> The record is in perfect condition. It's likely never been played. The sleeve is pristine, with no creases, ring wear, or other signs
+                            of handling.
+                          </li>
+                        </ol>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Got it!</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="row mb-4">
                 <div class="col">
                   <textarea id="inputTracklistA" class="form-control" rows="5" placeholder="Album Tracklist Side A" maxlength="400" aria-label="Tracklist A" required="" autofocus=""></textarea>
@@ -66,11 +119,11 @@
                   <textarea id="inputTracklistB" class="form-control" rows="5" placeholder="Album Tracklist Side B" maxlength="400" aria-label="Tracklist B" required="" autofocus=""></textarea>
                 </div>
               </div>
-              <select class="mb-5 btn bg-secondary" id="selectGenre" class="mb-2 form-control" aria-label="Genre" required autofocus>
+              <select class="mb-5 btn bg-secondary" id="selectGenre" class="form-control" aria-label="Genre" required autofocus>
                 <option value="">Genre</option>
                 <option value="Pop">Pop</option>
                 <option value="Rock">Rock</option>
-                <option value="Jazz/Funk/Disco">Jazz/Funk</option>
+                <option value="Jazz/Funk">Jazz/Funk</option>
                 <option value="Hip-Hop">Hip-Hop</option>
                 <option value="Blues/RnB">Blues/RnB</option>
                 <option value="Electronica">Electronica</option>

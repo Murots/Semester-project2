@@ -21,7 +21,6 @@ export async function fetchWithToken(url, method = "GET", data = null) {
   };
 
   if (data) {
-    console.log(data);
     fetchOptions.body = JSON.stringify(data);
   }
 
