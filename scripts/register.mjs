@@ -62,6 +62,8 @@ function getRegistrationData(event) {
     name,
     email,
     password,
+    avatar:
+      "https://lh3.googleusercontent.com/pw/ADCreHdXOpc0eX92NlO-wiwICwiLg1Lcsx-f0SbDPEX4teLygjqFcJlv_TTdRAL9amwsMxfoEjJVWby8SD-9DoAe-4froDXdl9USCpkeY-s7wMvgbVQypQBDyy5E0o4abTpsMVNITGjpQgBTZsJE3r6ZY33T=w167-h167-s-no-gm?authuser=0",
   };
 
   const existingFeedback = document.querySelector(".error, .success");

@@ -1,3 +1,6 @@
+import { userProfileURL } from "./constants.mjs";
+import { fetchAvatar } from "./fetchAvatar.mjs";
+
 function handleContentAccess() {
   if (localStorage.getItem("accessToken")) {
     const username = localStorage.getItem("username");
@@ -15,10 +18,12 @@ function handleContentAccess() {
     navBar.append(navProfile);
 
     const profileAvatar = document.createElement("img");
-    profileAvatar.src = "../images/Default-profile.png";
+    profileAvatar.id = "profile-avatar";
     profileAvatar.className = "rounded-circle";
     profileAvatar.alt = "Profile avatar";
     navProfile.append(profileAvatar);
+
+    fetchAvatar(userProfileURL, profileAvatar);
 
     const navName = document.createElement("a");
     navName.id = "nav-name";
