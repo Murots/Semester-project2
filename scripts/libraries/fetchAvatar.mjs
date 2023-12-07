@@ -10,9 +10,7 @@ export async function fetchAvatar(url, profileAvatarElement) {
   try {
     const profile = await fetchWithToken(url);
     const profileAvatarLink = profile.avatar;
-    if (profileAvatarLink) {
-      profileAvatarElement.src = profileAvatarLink;
-    }
+    profileAvatarElement.src = profileAvatarLink;
   } catch (error) {
     console.error("Error fetching avatar", error);
   }
