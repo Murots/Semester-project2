@@ -13,6 +13,7 @@
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../../scripts/profile.mjs" type="module"></script>
     <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../../scripts/components/createAvatar.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -30,11 +31,6 @@
               /></a>
             </ul>
             <button type="button" class="btn bg-primary text-white h4 fs-4 mb-0 mt-2 mt-md-0 py-0" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
-            <div class="d-none align-items-center my-2 my-md-0" id="nav-profile">
-              <img src="../../images/Default-profile.png" class="rounded-circle" alt="Default profile avatar" />
-              <a class="nav-link h4 ps-2 my-2 my-md-0" id="nav-name" aria-current="page" href="#"></a>
-              <h4 class="h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white">XXXX €</h4>
-            </div>
           </div>
         </div>
       </nav>
@@ -53,7 +49,7 @@
               <div class="pb-3 pb-sm-5">
                 <div class="input-group">
                   <input id="new-avatar-imput" type="text" class="form-control" placeholder="Avatar-URL" />
-                  <button id="search-button" class="btn btn-dark d-flex align-items-center" type="button"><img src="../../icons/Fist.png" alt="Fist icon" /></button>
+                  <button id="fist-button" class="btn btn-dark d-flex align-items-center" type="button"><img src="../../icons/Fist.png" alt="Fist icon" /></button>
                 </div>
               </div>
             </div>
