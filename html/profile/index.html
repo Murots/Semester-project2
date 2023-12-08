@@ -58,7 +58,18 @@
       </div>
       <section class="main-container my-5">
         <div class="row mx-0 mx-lg-auto pt-5">
-          <h1>Auction list</h1>
+          <!-- <div data-toggle="buttons">
+            <input type="radio" class="btn-check" name="listingType" id="your-listings" autocomplete="of" checked />
+            <label class="btn btn-outline-info" for="your-listings"><h1 class="my-0">Your listings</h1></label>
+            <input type="radio" class="btn-check" name="listingType" id="your-bids" autocomplete="off" />
+            <label class="btn btn-outline-info" for="your-bids"><h2 class="fs-1 my-0">Your bids</h2></label>
+          </div> -->
+          <div class="btn-group" role="group" aria-label="Listing Options">
+            <button type="button" class="btn btn-outline-info py-1 active" id="your-listings"><h1 class="fs-2 my-0 text-dark">Your listings</h1></button>
+            <button type="button" class="btn btn-outline-info py-1" id="your-bids"><h2 class="my-0 text-dark">Your bids</h2></button>
+          </div>
+
+          <div id="messageContainer"></div>
         </div>
       </section>
     </main>
