@@ -68,7 +68,7 @@ async function saveListing(url, listingData) {
   try {
     const json = await fetchWithToken(url, "POST", listingData);
     if (json) {
-      // location.reload();
+      window.location.href = "../profile.index.html";
     }
   } catch (error) {
     console.error(error);
