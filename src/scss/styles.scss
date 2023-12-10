@@ -130,12 +130,11 @@ li,
 }
 
 .auction-card {
-  background-image: url("../../images/IMG_20231204_213506_234.jpg");
   aspect-ratio: 1 / 1;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: center;
-  background-position-y: 55%;
+  background-position: center;
+  // background-position-y: 55%;
   border-radius: 5%;
 }
 

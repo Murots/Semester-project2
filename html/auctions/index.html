@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../../scripts/register.mjs" type="module"></script>
     <script src="../../scripts/signin.mjs" type="module"></script>
     <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../../scripts/auctions.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -109,77 +110,10 @@
         <div class="row mx-0 mx-lg-auto pt-5">
           <h1>Auction list</h1>
         </div>
-        <div class="row mx-0 mx-lg-auto mt-3">
-          <div class="col-12 col-sm-6 col-lg-4 mb-4">
-            <div class="card auction-card position-relative">
-              <div class="overlay p-3 position-absolute">
-                <h5 class="fw-bold text-white mb-0">Item Title</h5>
-                <h5 class="text-white fs-6 mb-3">Artist Name</h5>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="text-info fw-bold mb-0">Current bid:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="text-info fw-bold mb-0">€Price</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="mb-0 text-white">Deadline:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="mb-0 text-white">Date/Time</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-4">
-            <div class="card auction-card position-relative">
-              <div class="overlay p-3 position-absolute">
-                <h5 class="fw-bold text-white mb-0">Item Title</h5>
-                <h5 class="text-white fs-6 mb-3">Artist Name</h5>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="text-info fw-bold mb-0">Current bid:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="text-info fw-bold mb-0">€Price</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="mb-0 text-white">Deadline:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="mb-0 text-white">Date/Time</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4 mb-4">
-            <div class="card auction-card position-relative">
-              <div class="overlay p-3 position-absolute">
-                <h5 class="fw-bold text-white mb-0">Item Title</h5>
-                <h5 class="text-white fs-6 mb-3">Artist Name</h5>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="text-info fw-bold mb-0">Current bid:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="text-info fw-bold mb-0">€Price</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-6">
-                    <p class="mb-0 text-white">Deadline:</p>
-                  </div>
-                  <div class="col-6 text-end">
-                    <p class="mb-0 text-white">Date/Time</p>
-                  </div>
-                </div>
-              </div>
+        <div class="row mx-0 mx-lg-auto mt-3" id="listings-container">
+          <div class="d-flex justify-content-center" id="spinner-div">
+            <div class="spinner-grow text-secondary" style="width: 3rem; height: 3rem" role="status">
+              <span class="sr-only"></span>
             </div>
           </div>
         </div>

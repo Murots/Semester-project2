@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
@@ -49,7 +49,7 @@
             <h5 class="fw-bold mb-4">Item description:</h5>
             <form id="form-new-listing">
               <input type="text" id="inputTitle" class="mb-2 form-control" placeholder="Album Title" aria-label="Title" required="" autofocus="" />
-              <input type="text" id="inputArtist" class="mb-2 form-control" placeholder="Album Artist" aria-label="Artist" required="" autofocus="" />
+              <input type="text" id="inputArtist" class="mb-2 form-control" placeholder="Album Artist/Band" aria-label="Artist" required="" autofocus="" />
               <input type="number" id="inputRelease" class="mb-2 form-control" placeholder="Album Release Year" aria-label="Release year" min="1900" max="2099" required autofocus />
               <input type="text" id="inputLabel" class="mb-4 form-control" placeholder="Album Record Label" aria-label="Record label" required="" autofocus="" />
               <div class="f-flex align-items-center mb-4">
@@ -60,7 +60,7 @@
                   <option value="Good">Good</option>
                   <option value="Very Good">Very Good</option>
                   <option value="Near Mint">Near Mint</option>
-                  <option value="Mint">Mint (M)</option>
+                  <option value="Mint">Mint</option>
                 </select>
                 <a href="#" class="ms-4" data-bs-toggle="modal" data-bs-target="#gradingHelper">Help?</a>
                 <div class="modal fade" id="gradingHelper" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -117,9 +117,11 @@
                 <option value="">Genre</option>
                 <option value="Pop">Pop</option>
                 <option value="Rock">Rock</option>
+                <option value="Country">Country</option>
                 <option value="Jazz/Funk">Jazz/Funk</option>
                 <option value="Hip-Hop">Hip-Hop</option>
                 <option value="Blues/RnB">Blues/RnB</option>
+                <option value="Reggae">Reggae</option>
                 <option value="Electronica">Electronica</option>
                 <option value="Other">Other</option>
               </select>
