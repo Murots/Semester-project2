@@ -12,4 +12,4 @@ export const signInURL = apiBaseURL + endpointSignInURL;
 export const ListingsURL = apiBaseURL + endpointListingsURL;
 export const profilesURL = apiBaseURL + endpointProfilesURL;
 export const userProfileURL = apiBaseURL + endpointProfilesURL + "/" + user;
-export const filteredListings = apiBaseURL + endpointListingsURL + "?_tag=OldSchoolAuctions";
+export const filteredListingsURL = apiBaseURL + endpointListingsURL + "?_tag=OldSchoolAuctions";
