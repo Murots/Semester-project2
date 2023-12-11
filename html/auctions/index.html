@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="../../scripts/register.mjs" type="module"></script>
     <script src="../../scripts/signin.mjs" type="module"></script>
     <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../../scripts/auctions.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -85,7 +86,7 @@
             <img src="../../images/Logo2.png" class="alternative-logo" alt="Yellow Old School Auction logo" />
           </div>
           <div class="col-7">
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-12 col-sm-4 btn-group pb-3 pb-sm-5">
                 <select id="sort-by-form" class="form-select bg-info" aria-label="Default select example">
                   <option value="All" selected>Filter by: All</option>
@@ -101,6 +102,14 @@
                   <button id="search-button" class="btn btn-info d-flex align-items-center" type="button"><img src="../../icons/Search.png" alt="Search icon" /></button>
                 </div>
               </div>
+            </div> -->
+            <div class="row">
+              <div class="col-12 pb-3 pb-sm-5">
+                <div class="input-group">
+                  <input id="search-field" type="text" class="form-control" placeholder="Search..." />
+                  <button id="search-button" class="btn btn-info d-flex align-items-center" type="button"><img src="../../icons/Search.png" alt="Search icon" /></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -108,6 +117,18 @@
       <section class="main-container my-5">
         <div class="row mx-0 mx-lg-auto pt-5">
           <h1>Auction list</h1>
+        </div>
+        <div class="row mx-0 mx-lg-auto mt-3" id="listings-container">
+          <div class="d-flex justify-content-center" id="spinner-div">
+            <div class="spinner-grow text-secondary" style="width: 3rem; height: 3rem" role="status">
+              <span class="sr-only"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row mx-0 mx-lg-auto mt-3 d-flex justify-content-center">
+          <div class="col-auto">
+            <button type="button" class="btn btn-primary h4 fs-4 text-white px-5 py-0" id="loadMore-button">Load More</button>
+          </div>
         </div>
       </section>
     </main>
