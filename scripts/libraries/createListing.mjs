@@ -1,3 +1,5 @@
+import { deadlineConverter } from "./deadlineConverter.mjs";
+
 /**
  * Creates and appends HTML elements to display a listing(s) in the Auction list.
  * @param {any} listing
@@ -6,33 +8,26 @@
 export function createListingHTML(listingData) {
   try {
     const listingsContainer = document.getElementById("listings-container");
+    const listingID = listingData.id;
     const listingCover = listingData.media[0];
     const listingTitle = listingData.title;
     const descriptionArray = JSON.parse(listingData.description);
     const listingArtist = descriptionArray[0];
     const bidsCount = listingData._count.bids;
 
-    const listingDeadline = listingData.endsAt;
-    const deadline = new Date(listingDeadline);
-    const formattedDeadline = deadline.toLocaleDateString("en-GB", {
-      day: "2-digit",
-      month: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-      timeZone: "UTC",
-    });
+    const formattedDeadline = deadlineConverter(listingData.endsAt);
 
     const cardColumn = document.createElement("div");
     cardColumn.className = "col-12 col-sm-6 col-lg-4 mb-4";
     listingsContainer.append(cardColumn);
 
-    const card = document.createElement("div");
+    const card = document.createElement("a");
     card.className = "card auction-card position-relative";
     card.style.backgroundImage = `url('${listingCover}')`;
+    card.href = `../listing-details/index.html?id=${listingID}`;
     cardColumn.append(card);
 
-    const overlay = document.createElement("div");
+    const overlay = document.createElement("a");
     overlay.className = "overlay p-3 position-absolute";
     card.append(overlay);
 

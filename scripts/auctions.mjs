@@ -57,7 +57,7 @@ async function getListings() {
   } catch (error) {
     console.error(error);
     spinner.remove();
-    listingsContainer.innerText = errorMessage("Could not fetch data. Please try again later.");
+    listingsContainer.innerHTML = errorMessage("Could not fetch data. Please try again later.");
   }
 }
 
@@ -92,7 +92,7 @@ async function loadMoreListings() {
     }
   } catch (error) {
     console.error(error);
-    listingsContainer.innerText = errorMessage("Could not fetch data. Please try again later.");
+    listingsContainer.innerHTML = errorMessage("Could not fetch data. Please try again later.");
   }
 }
 
@@ -110,7 +110,7 @@ async function main() {
   } catch (error) {
     console.error(error);
     spinner.remove();
-    listingsContainer.innerText = errorMessage("Could not fetch data. Please try again later.");
+    listingsContainer.innerHTML = errorMessage("Could not fetch data. Please try again later.");
   }
 }
 

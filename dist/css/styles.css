@@ -11926,6 +11926,30 @@ li,
 .main-container .add-images-container img {
   max-width: 45vh;
 }
+.main-container #listings-container .auction-card {
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5%;
+}
+.main-container #listings-container .auction-card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+.main-container #listings-container .overlay {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+.main-container #details-container .details-image {
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}
 
 .footer-container .row {
   max-width: 100%;
@@ -11960,23 +11984,6 @@ li,
 
 .here-link:hover {
   color: red;
-}
-
-.auction-card {
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5%;
-}
-
-.overlay {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.65);
-  border-bottom-left-radius: 5%;
-  border-bottom-right-radius: 5%;
 }
 
 /*# sourceMappingURL=styles.css.map */
