@@ -11933,6 +11933,10 @@ li,
   background-position: center;
   border-radius: 5%;
 }
+.main-container #listings-container .auction-card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
 .main-container #listings-container .overlay {
   bottom: 0;
   left: 0;

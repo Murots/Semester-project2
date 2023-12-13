@@ -97,6 +97,10 @@ li,
       background-position: center;
       border-radius: 5%;
     }
+    .auction-card:hover {
+      transform: scale(1.03);
+      transition: transform 0.3s ease;
+    }
     .overlay {
       bottom: 0;
       left: 0;

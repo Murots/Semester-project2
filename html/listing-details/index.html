@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>| OLD SCHOOL AUCTIONS</title>
+    <title></title>
     <meta name="description" content="On this page you can read about the spesific auction listing, like list of album songs. Please feel free to make a bid." />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,37 +43,34 @@
       </div>
       <section class="main-container py-5 bg-secondary">
         <div class="row mx-0 mx-lg-auto pt-5">
-          <h1 class="text-primary">Example Listing</h1>
+          <h1 class="text-primary">Album Details</h1>
         </div>
         <div class="row mx-0 mx-lg-auto mt-3 px-lg-5 py-5 bg-white">
           <div class="col-12" id="details-container">
-            <div class="row">
+            <div class="d-flex justify-content-center" id="spinner-div">
+              <div class="spinner-grow text-secondary" style="width: 3rem; height: 3rem" role="status">
+                <span class="sr-only"></span>
+              </div>
+            </div>
+            <div class="row d-none" id="carousel-row">
               <div class="col-12 col-md-6 pe-md-4">
                 <div id="listing-carousel" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#listingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#listingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#listing-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#listing-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   </div>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="../../images/unsplash_PF1l1F1hzoU.jpg" class="d-block w-100 details-image" alt="Image One" />
-                    </div>
-                    <div class="carousel-item">
-                      <img src="../../images/unsplash_PF1l1F1hzoU.jpg" class="d-block w-100 details-image" alt="Image Two" />
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#listingCarousel" data-bs-slide="prev">
+                  <div class="carousel-inner" id="carousel-inner"></div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#listing-carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#listingCarousel" data-bs-slide="next">
+                  <button class="carousel-control-next" type="button" data-bs-target="#listing-carousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                   </button>
                 </div>
               </div>
-
-              <div class="col-12 col-md-6 d-flex flex-column ps-md-4">
+              <!-- <div class="col-12 col-md-6 d-flex flex-column ps-md-4">
                 <div class="d-flex flex-column flex-grow-1 justify-content-center">
                   <div class="row">
                     <h5 class="fs-3 fw-bold mb-0 mt-5 mt-md-0">Example title</h5>
@@ -120,9 +117,9 @@
                     <button type="button" class="btn btn-primary h4 fs-4 text-white py-0 m-0">Submit</button>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="row mt-5 pt-5">
+            <!-- <div class="row mt-5 pt-5">
               <h5 class="col-12 fw-bold">Album Details</h5>
             </div>
             <div class="row">
@@ -157,7 +154,7 @@
                   <li>10.</li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
