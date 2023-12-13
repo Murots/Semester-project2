@@ -9,8 +9,11 @@ function handleContentAccess() {
     const navNewListing = document.getElementById("nav-new");
 
     signInButton.style.display = "none";
-    navNewListing.classList.remove("d-none");
-    navNewListing.classList.add("d-flex");
+
+    if (navNewListing) {
+      navNewListing.classList.remove("d-none");
+      navNewListing.classList.add("d-flex");
+    }
 
     const navProfile = document.createElement("div");
     navProfile.id = "nav-profile";
@@ -35,7 +38,7 @@ function handleContentAccess() {
     const currentUrl = window.location.href;
     if (currentUrl.includes("/profile/")) {
       navName.href = "#";
-    } else if (currentUrl.includes("/auctions/") || currentUrl.includes("/new-listing/")) {
+    } else if (currentUrl.includes("/auctions/") || currentUrl.includes("/new-listing/") || currentUrl.includes("/listing-details/")) {
       navName.href = `../profile/index.html?id=${username}`;
     } else {
       navName.href = `profile/index.html?id=${username}`;

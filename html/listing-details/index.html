@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>| OLD SCHOOL AUCTIONS</title>
+    <meta name="description" content="On this page you can read about the spesific auction listing, like list of album songs. Please feel free to make a bid." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lobster&family=Monoton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../../scripts/newListing.mjs" type="module"></script>
+    <script src="../../scripts/components/createItemAlbum.mjs" type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md bg-body fixed-top py-3">
+        <div class="container-fluid nav-content-container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-collapse collapse show fs-4" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <a class="nav-link h4 p-0 my-2 my-md-0 me-md-5" aria-current="page" href="../../html/index.html">Home</a>
+              <a class="nav-link h4 p-0 my-2 my-md-0 mx-md-5" aria-current="page" href="../auctions/index.html">Auctions</a>
+              <a class="nav-link h4 p-0 my-2 my-md-0 ms-md-5 d-none" id="nav-new" aria-current="page" href="../new-listing/index.html"
+                >New listing<img src="../../icons/gridicons_add-outline.png" class="pb-2 ps-1" alt="Add new symbol"
+              /></a>
+            </ul>
+            <button type="button" class="btn bg-primary text-white h4 fs-4 mb-0 mt-2 mt-md-0 py-0" id="sign-in-button" data-bs-toggle="modal" data-bs-target="#sign-in-modal">Sign in</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="banner-container bg-white">
+        <div class="row d-flex align-items-end m-0 m-lg-auto">
+          <div class="col">
+            <img src="../../images/Logo5.png" class="alternative-logo" alt="Light yellow Old School Auction logo" />
+          </div>
+        </div>
+      </div>
+      <section class="main-container py-5 bg-secondary">
+        <div class="row mx-0 mx-lg-auto pt-5">
+          <h1 class="text-primary">Example Listing</h1>
+        </div>
+        <div class="row mx-0 mx-lg-auto mt-3 px-lg-5 py-5 bg-white">
+          <div class="col-12" id="details-container">
+            <div class="row">
+              <div class="col-12 col-md-6 pe-md-4">
+                <div id="listing-carousel" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#listingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#listingCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="../../images/unsplash_PF1l1F1hzoU.jpg" class="d-block w-100 details-image" alt="Image One" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="../../images/unsplash_PF1l1F1hzoU.jpg" class="d-block w-100 details-image" alt="Image Two" />
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#listingCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#listingCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 d-flex flex-column ps-md-4">
+                <div class="d-flex flex-column flex-grow-1 justify-content-center">
+                  <div class="row">
+                    <h5 class="fs-3 fw-bold mb-0 mt-5 mt-md-0">Example title</h5>
+                  </div>
+                  <div class="row mb-4">
+                    <h5 class="fs-4">By Artist</h5>
+                  </div>
+                  <div class="row mb-2">
+                    <div class="col-7 pe-0">
+                      <h5 class="fs-5 fw-bold text-primary m-0">Current bid:</h5>
+                    </div>
+                    <div class="col-5 text-end">
+                      <h5 class="fs-5 fw-bold text-primary m-0">XXX €</h5>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5 pe-0">
+                      <h5 class="fs-5">deadline:</h5>
+                    </div>
+                    <div class="col-7 text-end">
+                      <h5 class="fs-5">dd.mm.yyyy</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex flex-column">
+                  <div class="row mt-4 mt-md-0">
+                    <div class="col-6 d-flex align-items-center pe-0">
+                      <h5 class="fs-3 fw-bold m-0">Place bid:</h5>
+                    </div>
+                    <div class="col-6 d-flex align-items-center justify-content-end">
+                      <input type="text" class="form-control form-control-sm py-0" />
+                      <h5 class="fs-3 fw-bold ms-2 mb-0">€</h5>
+                    </div>
+                  </div>
+                  <div class="row px-2 mt-3">
+                    <button type="button" class="btn btn-primary h4 fs-4 text-white py-0 m-0">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-5 pt-5">
+              <h5 class="col-12 fw-bold">Album Details</h5>
+            </div>
+            <div class="row">
+              <ul class="col-12 list-unstyled">
+                <li>Title:</li>
+                <li>Artist/band:</li>
+                <li>Release Year:</li>
+                <li>Record Label:</li>
+                <li>Condition:</li>
+                <li>Genre:</li>
+              </ul>
+            </div>
+            <div class="row mt-4">
+              <h5 class="col-12 fw-bold">Tracklist</h5>
+              <div class="col-6">
+                <p>Side A:</p>
+                <ul class="list-unstyled">
+                  <li>1.</li>
+                  <li>2.</li>
+                  <li>3.</li>
+                  <li>4.</li>
+                  <li>5.</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <p>Side B:</p>
+                <ul class="list-unstyled">
+                  <li>6.</li>
+                  <li>7.</li>
+                  <li>8.</li>
+                  <li>9.</li>
+                  <li>10.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container bg-primary text-white pt-4">
+        <div class="row mx-0 mx-lg-auto">
+          <div class="col-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p class="">Connect with us:</p>
+              <div class="d-flex justify-content-between">
+                <a href="https://www.instagram.com/accounts/login/"><img src="../../icons/Instagram.png" alt="Link to Instagram" /></a>
+                <a href="https://www.facebook.com/login/"><img src="../../icons/Facebook.png" alt="Link to Facebook" /></a>
+                <a href="https://n9.cl/6vti2"><img src="../../icons/Youtube.png" alt="Link to Youtube" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-lg-4 d-flex justify-content-center">
+            <div class="text-center">
+              <p>support@old-school.com</p>
+              <p>+47 xxx xx xxx</p>
+              <p>Dokka, 1671 Fredrikstad, Norway</p>
+            </div>
+          </div>
+          <div class="d-none d-lg-flex col-lg-4 justify-content-center">
+            <img class="img-fluid" src="../../images/Group 32.png" alt="Footer art" />
+          </div>
+        </div>
+        <hr class="my-0" />
+        <div class="row text-center">
+          <p class="my-2">Copyright &copy; 2023 - Old School Auctions</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
