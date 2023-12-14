@@ -11950,6 +11950,10 @@ li,
   object-position: center;
   aspect-ratio: 1/1;
 }
+.main-container #details-container .seller-profile {
+  width: 23px;
+  height: 23px;
+}
 
 .footer-container .row {
   max-width: 100%;

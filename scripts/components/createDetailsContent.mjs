@@ -8,6 +8,7 @@ import { deadlineConverter } from "../libraries/deadlineConverter.mjs";
  */
 export function createDetailsContent(listing, detailsContainer) {
   try {
+    console.log(listing);
     const carouselRow = document.getElementById("carousel-row");
     const carouselInner = document.getElementById("carousel-inner");
 
@@ -30,6 +31,9 @@ export function createDetailsContent(listing, detailsContainer) {
     const genre = listing.tags[1];
     const formattedDeadline = deadlineConverter(listing.endsAt);
     const mediaLinks = listing.media;
+    const seller = listing.seller.name;
+    const sellerAvatar = listing.seller.avatar;
+    console.log(sellerAvatar);
 
     mediaLinks.forEach((link, index) => {
       const carouselItem = document.createElement("div");
@@ -140,13 +144,23 @@ export function createDetailsContent(listing, detailsContainer) {
     sellerColLeft.append(sellerHeading);
 
     const sellerColRight = document.createElement("div");
-    sellerColRight.className = "col-8 text-end";
+    sellerColRight.className = "col-8";
     sellerRow.append(sellerColRight);
 
+    const sellerProfile = document.createElement("div");
+    sellerProfile.className = "d-flex align-items-center justify-content-end";
+    sellerColRight.append(sellerProfile);
+
+    const sellerProfileAvatar = document.createElement("img");
+    sellerProfileAvatar.className = "rounded-circle seller-profile me-2";
+    sellerProfileAvatar.alt = "Seller avatar";
+    sellerProfileAvatar.src = sellerAvatar;
+    sellerProfile.append(sellerProfileAvatar);
+
     const sellerName = document.createElement("h5");
-    sellerName.className = "fs-5";
-    sellerName.innerText = "Example User";
-    sellerColRight.append(sellerName);
+    sellerName.className = "fs-5 my-0";
+    sellerName.innerText = seller;
+    sellerProfile.append(sellerName);
 
     const bidSectionContainer = document.createElement("div");
     bidSectionContainer.className = "mt-auto";
