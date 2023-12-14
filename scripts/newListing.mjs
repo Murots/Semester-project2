@@ -1,5 +1,5 @@
 import { fetchWithToken } from "./services/doFetch.mjs";
-import { ListingsURL } from "./libraries/constants.mjs";
+import { listingsURL } from "./libraries/constants.mjs";
 import { addImageCard } from "./components/createItemAlbum.mjs";
 
 const newListingForm = document.getElementById("form-new-listing");
