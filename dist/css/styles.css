@@ -11926,18 +11926,21 @@ li,
 .main-container .add-images-container img {
   max-width: 45vh;
 }
-.main-container #listings-container .auction-card {
+.main-container #listings-container .auction-card,
+.main-container #your-content-container .auction-card {
   aspect-ratio: 1/1;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   border-radius: 5%;
 }
-.main-container #listings-container .auction-card:hover {
+.main-container #listings-container .auction-card:hover,
+.main-container #your-content-container .auction-card:hover {
   transform: scale(1.03);
   transition: transform 0.3s ease;
 }
-.main-container #listings-container .overlay {
+.main-container #listings-container .overlay,
+.main-container #your-content-container .overlay {
   bottom: 0;
   left: 0;
   right: 0;

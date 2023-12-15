@@ -57,18 +57,17 @@
       </div>
       <section class="main-container my-5">
         <div class="row mx-0 mx-lg-auto pt-5">
-          <!-- <div data-toggle="buttons">
-            <input type="radio" class="btn-check" name="listingType" id="your-listings" autocomplete="of" checked />
-            <label class="btn btn-outline-info" for="your-listings"><h1 class="my-0">Your listings</h1></label>
-            <input type="radio" class="btn-check" name="listingType" id="your-bids" autocomplete="off" />
-            <label class="btn btn-outline-info" for="your-bids"><h2 class="fs-1 my-0">Your bids</h2></label>
-          </div> -->
-          <div class="btn-group" role="group" aria-label="Listing Options">
+          <div class="btn-group" role="group" aria-label="Your content options">
             <button type="button" class="btn btn-outline-info py-1 active" id="your-listings"><h1 class="fs-2 my-0 text-dark">Your listings</h1></button>
             <button type="button" class="btn btn-outline-info py-1" id="your-bids"><h2 class="my-0 text-dark">Your bids</h2></button>
           </div>
+        </div>
 
-          <div id="messageContainer"></div>
+        <div class="row mx-0 mx-lg-auto mt-4 pt-2" id="your-content-container"></div>
+        <div class="d-flex justify-content-center" id="spinner-div">
+          <div class="spinner-grow text-info" style="width: 3rem; height: 3rem" role="status">
+            <span class="sr-only"></span>
+          </div>
         </div>
       </section>
     </main>

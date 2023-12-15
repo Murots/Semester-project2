@@ -17,7 +17,7 @@ export function searchListings(searchQuery, listings) {
     const listingGenre = listing.tags[1].toLowerCase();
 
     if (searchQuery === "" || listingDescription.includes(searchQuery) || listingTitle.includes(searchQuery) || listingGenre.includes(searchQuery)) {
-      createListingHTML(listing);
+      createListingHTML(listing, listingsContainer);
     }
   });
 }

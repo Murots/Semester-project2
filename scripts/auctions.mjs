@@ -45,10 +45,10 @@ const perPage = 9;
 async function getListings() {
   let url;
   if (currentSearchQuery) {
-    url = filteredListingsURL;
+    url = filteredListingsURL + "&_bids=true";
   } else {
     const offset = (currentPage - 1) * perPage;
-    url = `${filteredListingsURL}&limit=${perPage}&offset=${offset}`;
+    url = `${filteredListingsURL}&limit=${perPage}&offset=${offset}&_bids=true`;
   }
 
   try {
@@ -68,9 +68,9 @@ async function getListings() {
  * @example
  * createListings([{ title: "Listing 1", ... }, { title: "Listing 2", ... }]);
  */
-function createListings(listings) {
+function createListings(listings, container) {
   listings.forEach((listing) => {
-    createListingHTML(listing);
+    createListingHTML(listing, container);
   });
 }
 
@@ -85,7 +85,7 @@ async function loadMoreListings() {
     }
     currentPage++;
     const newlistings = await getListings();
-    createListings(newlistings);
+    createListings(newlistings, listingsContainer);
 
     if (newlistings.length < perPage) {
       loadMoreButton.disabled = true;
@@ -105,7 +105,7 @@ loadMoreButton.addEventListener("click", loadMoreListings);
 async function main() {
   try {
     const initialListings = await getListings();
-    createListings(initialListings);
+    createListings(initialListings, listingsContainer);
     spinner.remove();
   } catch (error) {
     console.error(error);

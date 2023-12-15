@@ -4,13 +4,15 @@ import { deadlineConverter } from "../libraries/deadlineConverter.mjs";
  * Creates the HTML for displaying listing details.
  * @param {object} listing
  * @param {HTMLElement} detailsContainer
+ * @param {HTMLElement} bidsHistoryModal
  * @returns {void}
  */
-export function createDetailsContent(listing, detailsContainer) {
+export function createDetailsContent(listing, detailsContainer, bidHistoryModal) {
   try {
-    console.log(listing);
     const carouselRow = document.getElementById("carousel-row");
     const carouselInner = document.getElementById("carousel-inner");
+    const modalOlElement = bidHistoryModal.querySelector("ol");
+    modalOlElement.innerHTML = "";
 
     if (listing) {
       carouselRow.classList.remove("d-none");
@@ -30,10 +32,9 @@ export function createDetailsContent(listing, detailsContainer) {
 
     const genre = listing.tags[1];
     const formattedDeadline = deadlineConverter(listing.endsAt);
-    const mediaLinks = listing.media;
     const seller = listing.seller.name;
     const sellerAvatar = listing.seller.avatar;
-    console.log(sellerAvatar);
+    const mediaLinks = listing.media;
 
     mediaLinks.forEach((link, index) => {
       const carouselItem = document.createElement("div");
@@ -50,6 +51,23 @@ export function createDetailsContent(listing, detailsContainer) {
       img.src = link;
       img.alt = `Image ${index + 1}`;
       carouselItem.append(img);
+    });
+
+    const bids = listing.bids;
+    let latestBidAmount = "No Bids";
+
+    if (bids.length > 0) {
+      const latestBid = bids[bids.length - 1];
+      const amount = latestBid.amount;
+      latestBidAmount = `${amount} CR`;
+    }
+
+    bids.forEach((bid) => {
+      const bidList = document.createElement("li");
+      const bidMade = deadlineConverter(bid.created);
+      bidList.className = "mb-3";
+      bidList.innerText = `Bid: ${bid.amount} CR by ${bid.bidderName} on ${bidMade}`;
+      modalOlElement.append(bidList);
     });
 
     const bidContentColumn = document.createElement("div");
@@ -105,7 +123,7 @@ export function createDetailsContent(listing, detailsContainer) {
 
     const currentBidPrice = document.createElement("h5");
     currentBidPrice.className = "fs-5 fw-bold text-primary m-0";
-    currentBidPrice.innerText = "XXX €";
+    currentBidPrice.innerText = latestBidAmount;
     currentBidColRight.append(currentBidPrice);
 
     const deadlineRow = document.createElement("div");
@@ -190,7 +208,7 @@ export function createDetailsContent(listing, detailsContainer) {
 
     const bidCurrency = document.createElement("h5");
     bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
-    bidCurrency.innerText = "€";
+    bidCurrency.innerText = "CR";
     bidColRight.append(bidCurrency);
 
     const submitButtonRow = document.createElement("div");
@@ -284,6 +302,18 @@ export function createDetailsContent(listing, detailsContainer) {
       trackBList.innerText = track;
       tracklistSideB.append(trackBList);
     });
+
+    const viewBidsRow = document.createElement("div");
+    viewBidsRow.className = "row mt-4";
+    detailsContainer.append(viewBidsRow);
+
+    const viewBidsLink = document.createElement("a");
+    viewBidsLink.className = "fs-5";
+    viewBidsLink.setAttribute("data-bs-toggle", "modal");
+    viewBidsLink.setAttribute("data-bs-target", "#bid-history");
+    viewBidsLink.innerText = "View bid history";
+    viewBidsLink.href = "#";
+    viewBidsRow.append(viewBidsLink);
   } catch (error) {
     console.error(error);
   }

@@ -7,7 +7,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const listingId = params.get("id");
 
-const ListingBySellerURL = listingsURL + "/" + listingId + "?_seller=true";
+const ListingWithSellerAndBidsURL = listingsURL + "/" + listingId + "?_seller=true&_bids=true";
+
+const bidHistoryModal = document.getElementById("bid-history");
 const detailsContainer = document.getElementById("details-container");
 const spinner = document.getElementById("spinner-div");
 
@@ -33,8 +35,8 @@ async function getListingWithToken(url) {
  */
 async function main() {
   try {
-    const listingData = await getListingWithToken(ListingBySellerURL);
-    createDetailsContent(listingData, detailsContainer);
+    const listingData = await getListingWithToken(ListingWithSellerAndBidsURL);
+    createDetailsContent(listingData, detailsContainer, bidHistoryModal);
     spinner.remove();
   } catch (error) {
     console.error(error);
