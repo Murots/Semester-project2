@@ -9,8 +9,20 @@
  * errorFeedback(errors, form);
  */
 export function errorFeedback(errors, formElement) {
+  const existingError = formElement.querySelector(".error");
+  if (existingError) {
+    existingError.remove();
+  }
+
   const errorMessage = document.createElement("p");
   errorMessage.classList.add("error", "p-1", "m-3");
   errorMessage.innerText = errors[0].message;
   formElement.append(errorMessage);
 }
+
+// export function errorFeedback(errors, formElement) {
+//   const errorMessage = document.createElement("p");
+//   errorMessage.classList.add("error", "p-1", "m-3");
+//   errorMessage.innerText = errors[0].message;
+//   formElement.append(errorMessage);
+// }

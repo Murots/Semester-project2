@@ -1,6 +1,7 @@
 import { fetchWithToken } from "./services/doFetch.mjs";
 import { listingsURL } from "./libraries/constants.mjs";
 import { addImageCard } from "./components/createItemAlbum.mjs";
+import { errorFeedback } from "./libraries/errorFeedback.mjs";
 
 const newListingForm = document.getElementById("form-new-listing");
 const addImageButton = document.getElementById("add-image-button");
@@ -68,9 +69,14 @@ async function saveListing(url, listingData) {
   try {
     console.log(listingData);
     const json = await fetchWithToken(url, "POST", listingData);
-    // if (json) {
-    //   window.location.href = "../profile.index.html";
-    // }
+
+    if (json.id) {
+      window.location.href = "../profile/index.html";
+    } else {
+      if (json.errors) {
+        errorFeedback(json.errors, newListingForm);
+      }
+    }
   } catch (error) {
     console.error(error);
   }
