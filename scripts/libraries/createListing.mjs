@@ -5,21 +5,28 @@ import { deadlineConverter } from "./deadlineConverter.mjs";
  * @param {any} listing
  * @returns {void}
  */
-export function createListingHTML(listingData) {
+export function createListingHTML(listingData, container) {
   try {
-    const listingsContainer = document.getElementById("listings-container");
     const listingID = listingData.id;
     const listingCover = listingData.media[0];
     const listingTitle = listingData.title;
     const descriptionArray = JSON.parse(listingData.description);
     const listingArtist = descriptionArray[0];
-    const bidsCount = listingData._count.bids;
+
+    const bids = listingData.bids;
+    let latestBidAmount = "No Bids";
+
+    if (bids.length > 0) {
+      const latestBid = bids[bids.length - 1];
+      const amount = latestBid.amount;
+      latestBidAmount = `${amount} CR`;
+    }
 
     const formattedDeadline = deadlineConverter(listingData.endsAt);
 
     const cardColumn = document.createElement("div");
     cardColumn.className = "col-12 col-sm-6 col-lg-4 mb-4";
-    listingsContainer.append(cardColumn);
+    container.append(cardColumn);
 
     const card = document.createElement("a");
     card.className = "card auction-card position-relative";
@@ -60,7 +67,7 @@ export function createListingHTML(listingData) {
 
     const bidPrice = document.createElement("p");
     bidPrice.className = "text-info fw-bold mb-0";
-    bidPrice.innerText = bidsCount;
+    bidPrice.innerText = latestBidAmount;
     bidPriceColumn.append(bidPrice);
 
     const deadlineRow = document.createElement("div");

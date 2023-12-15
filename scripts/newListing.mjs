@@ -49,7 +49,7 @@ function createListingData(event) {
     media,
   };
 
-  saveListing(ListingsURL, dataToList);
+  saveListing(listingsURL, dataToList);
 }
 
 newListingForm.addEventListener("submit", createListingData);

@@ -67,7 +67,7 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
       const bidMade = deadlineConverter(bid.created);
       bidList.className = "mb-3";
       bidList.innerText = `Bid: ${bid.amount} CR by ${bid.bidderName} on ${bidMade}`;
-      modalOlElement.appendChild(bidList);
+      modalOlElement.append(bidList);
     });
 
     const bidContentColumn = document.createElement("div");
@@ -208,7 +208,7 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
 
     const bidCurrency = document.createElement("h5");
     bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
-    bidCurrency.innerText = "€";
+    bidCurrency.innerText = "CR";
     bidColRight.append(bidCurrency);
 
     const submitButtonRow = document.createElement("div");
