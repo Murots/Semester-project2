@@ -28,12 +28,6 @@ export function createListingHTML(listingData, container) {
     cardColumn.className = "col-12 col-sm-6 col-lg-4 mb-4";
     container.append(cardColumn);
 
-    // const card = document.createElement("a");
-    // card.className = "card auction-card position-relative";
-    // card.style.backgroundImage = `url('${listingCover}')`;
-    // card.href = `../listing-details/index.html?id=${listingID}`;
-    // cardColumn.append(card);
-
     let card;
     card = document.createElement("a");
     if (localStorage.getItem("accessToken")) {

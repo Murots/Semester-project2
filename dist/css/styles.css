@@ -35,7 +35,7 @@
   --bs-info: #ec7319;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #f3f3f3;
+  --bs-light: #ededed;
   --bs-dark: #2d2d2d;
   --bs-primary-rgb: 142, 44, 72;
   --bs-secondary-rgb: 255, 220, 96;
@@ -43,7 +43,7 @@
   --bs-info-rgb: 236, 115, 25;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 243, 243, 243;
+  --bs-light-rgb: 237, 237, 237;
   --bs-dark-rgb: 45, 45, 45;
   --bs-primary-text-emphasis: #39121d;
   --bs-secondary-text-emphasis: #665826;
@@ -2014,13 +2014,13 @@ progress {
 
 .table-light {
   --bs-table-color: #000;
-  --bs-table-bg: #f3f3f3;
-  --bs-table-border-color: #c2c2c2;
-  --bs-table-striped-bg: #e7e7e7;
+  --bs-table-bg: #ededed;
+  --bs-table-border-color: #bebebe;
+  --bs-table-striped-bg: #e1e1e1;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dbdbdb;
+  --bs-table-active-bg: #d5d5d5;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e1e1e1;
+  --bs-table-hover-bg: #dbdbdb;
   --bs-table-hover-color: #000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -3067,19 +3067,19 @@ textarea.form-control-lg {
 
 .btn-light {
   --bs-btn-color: #000;
-  --bs-btn-bg: #f3f3f3;
-  --bs-btn-border-color: #f3f3f3;
+  --bs-btn-bg: #ededed;
+  --bs-btn-border-color: #ededed;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #cfcfcf;
-  --bs-btn-hover-border-color: #c2c2c2;
-  --bs-btn-focus-shadow-rgb: 207, 207, 207;
+  --bs-btn-hover-bg: #c9c9c9;
+  --bs-btn-hover-border-color: #bebebe;
+  --bs-btn-focus-shadow-rgb: 201, 201, 201;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #c2c2c2;
-  --bs-btn-active-border-color: #b6b6b6;
+  --bs-btn-active-bg: #bebebe;
+  --bs-btn-active-border-color: #b2b2b2;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #f3f3f3;
-  --bs-btn-disabled-border-color: #f3f3f3;
+  --bs-btn-disabled-bg: #ededed;
+  --bs-btn-disabled-border-color: #ededed;
 }
 
 .btn-dark {
@@ -3202,19 +3202,19 @@ textarea.form-control-lg {
 }
 
 .btn-outline-light {
-  --bs-btn-color: #f3f3f3;
-  --bs-btn-border-color: #f3f3f3;
+  --bs-btn-color: #ededed;
+  --bs-btn-border-color: #ededed;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #f3f3f3;
-  --bs-btn-hover-border-color: #f3f3f3;
-  --bs-btn-focus-shadow-rgb: 243, 243, 243;
+  --bs-btn-hover-bg: #ededed;
+  --bs-btn-hover-border-color: #ededed;
+  --bs-btn-focus-shadow-rgb: 237, 237, 237;
   --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #f3f3f3;
-  --bs-btn-active-border-color: #f3f3f3;
+  --bs-btn-active-bg: #ededed;
+  --bs-btn-active-border-color: #ededed;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #f3f3f3;
+  --bs-btn-disabled-color: #ededed;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #f3f3f3;
+  --bs-btn-disabled-border-color: #ededed;
   --bs-gradient: none;
 }
 
@@ -6856,8 +6856,8 @@ textarea.form-control-lg {
   text-decoration-color: RGBA(var(--bs-light-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-light:hover, .link-light:focus {
-  color: RGBA(245, 245, 245, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(245, 245, 245, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(241, 241, 241, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(241, 241, 241, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-dark {
@@ -11917,8 +11917,7 @@ li,
   max-height: 600px;
 }
 
-.main-container .trending-container img {
-  border-radius: 50%;
+.main-container #trending-container img {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -11933,11 +11932,6 @@ li,
   background-size: cover;
   background-position: center;
   border-radius: 5%;
-}
-.main-container #listings-container .auction-card:hover,
-.main-container #your-content-container .auction-card:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
 }
 .main-container #listings-container .overlay,
 .main-container #your-content-container .overlay {
@@ -11956,6 +11950,11 @@ li,
 .main-container #details-container .seller-profile {
   width: 23px;
   height: 23px;
+}
+.main-container .auction-card:hover,
+.main-container #trending-album:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
 }
 
 .footer-container .row {
