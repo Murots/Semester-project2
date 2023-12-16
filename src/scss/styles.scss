@@ -76,9 +76,8 @@ li,
 }
 
 .main-container {
-  .trending-container {
+  #trending-container {
     img {
-      border-radius: 50%;
       width: 200px;
       height: 200px;
       object-fit: cover;
@@ -97,10 +96,6 @@ li,
       background-size: cover;
       background-position: center;
       border-radius: 5%;
-    }
-    .auction-card:hover {
-      transform: scale(1.03);
-      transition: transform 0.3s ease;
     }
     .overlay {
       bottom: 0;
@@ -121,6 +116,11 @@ li,
       width: 23px;
       height: 23px;
     }
+  }
+  .auction-card:hover,
+  #trending-album:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
   }
 }
 
