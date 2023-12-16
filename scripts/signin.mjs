@@ -34,6 +34,7 @@ async function signInUser(url, userData) {
       errorFeedback(json.errors, signInForm);
     } else {
       document.querySelector("#sign-in-modal .btn-close").click();
+      window.location.reload();
     }
   } catch (error) {
     console.error(error);

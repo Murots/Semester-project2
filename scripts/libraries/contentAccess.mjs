@@ -35,19 +35,32 @@ function handleContentAccess() {
     navName.ariaCurrent = "page";
     navProfile.append(navName);
 
+    const creditCount = document.createElement("h4");
+    creditCount.className = "h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white";
+    creditCount.innerText = "XXXX €";
+    navProfile.append(creditCount);
+
     const currentUrl = window.location.href;
     if (currentUrl.includes("/profile/")) {
       navName.href = "#";
+
+      const navLogOut = document.createElement("a");
+      navLogOut.className = "nav-link h4 ms-5 my-2 my-md-0";
+      navLogOut.innerText = "Log out";
+      navLogOut.ariaCurrent = "page";
+      navLogOut.href = "../index.html";
+      navProfile.append(navLogOut);
+
+      navLogOut.addEventListener("click", function (event) {
+        event.preventDefault();
+        localStorage.clear();
+        window.location.href = navLogOut.href;
+      });
     } else if (currentUrl.includes("/auctions/") || currentUrl.includes("/new-listing/") || currentUrl.includes("/listing-details/")) {
       navName.href = `../profile/index.html?id=${username}`;
     } else {
       navName.href = `profile/index.html?id=${username}`;
     }
-
-    const creditCount = document.createElement("h4");
-    creditCount.className = "h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white";
-    creditCount.innerText = "XXXX €";
-    navProfile.append(creditCount);
   }
 }
 
