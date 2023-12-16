@@ -13,6 +13,7 @@
     <script src="../scripts/register.mjs" type="module"></script>
     <script src="../scripts/signin.mjs" type="module"></script>
     <script src="../scripts/libraries/contentAccess.mjs" type="module"></script>
+    <script src="../scripts/homepage.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -90,18 +91,22 @@
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="../images/unsplash_1yAm6NYkSsk2.jpg" alt="Feet hanging out of a car window" />
-                  <div class="carousel-caption custom-carousel-caption d-md-block">
-                    <h3>Explore our rich collection</h3>
+                <a href="auctions/index.html">
+                  <div class="carousel-item active">
+                    <img src="../images/unsplash_1yAm6NYkSsk2.jpg" alt="Feet hanging out of a car window" />
+                    <div class="carousel-caption custom-carousel-caption d-md-block">
+                      <h3>Explore our rich collection</h3>
+                    </div>
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="../images/unsplash_zRg1OJUkPZg.jpg" alt="Lady dipping her toes in the pool" />
-                  <div class="carousel-caption custom-carousel-caption d-md-block">
-                    <h3>Get 1000 credits when joining today</h3>
+                </a>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#register-modal">
+                  <div class="carousel-item">
+                    <img src="../images/unsplash_zRg1OJUkPZg.jpg" alt="Lady dipping her toes in the pool" />
+                    <div class="carousel-caption custom-carousel-caption d-md-block">
+                      <h3>Get 1000 credits when joining today</h3>
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
