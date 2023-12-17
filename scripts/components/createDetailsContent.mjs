@@ -180,46 +180,49 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
     sellerName.innerText = seller;
     sellerProfile.append(sellerName);
 
-    const bidSectionContainer = document.createElement("div");
-    bidSectionContainer.className = "mt-auto";
-    bidContentColumn.append(bidSectionContainer);
+    const username = localStorage.getItem("username");
+    if (username !== seller) {
+      const bidSectionContainer = document.createElement("div");
+      bidSectionContainer.className = "mt-auto";
+      bidContentColumn.append(bidSectionContainer);
 
-    const bidRow = document.createElement("div");
-    bidRow.className = "row mt-4 mt-md-0";
-    bidSectionContainer.append(bidRow);
+      const bidRow = document.createElement("div");
+      bidRow.className = "row mt-4 mt-md-0";
+      bidSectionContainer.append(bidRow);
 
-    const bidColLeft = document.createElement("div");
-    bidColLeft.className = "col-6 d-flex align-items-center pe-0";
-    bidRow.append(bidColLeft);
+      const bidColLeft = document.createElement("div");
+      bidColLeft.className = "col-6 d-flex align-items-center pe-0";
+      bidRow.append(bidColLeft);
 
-    const bidHeading = document.createElement("h5");
-    bidHeading.className = "fs-3 fw-bold m-0";
-    bidHeading.innerText = "Place bid:";
-    bidColLeft.append(bidHeading);
+      const bidHeading = document.createElement("h5");
+      bidHeading.className = "fs-3 fw-bold m-0";
+      bidHeading.innerText = "Place bid:";
+      bidColLeft.append(bidHeading);
 
-    const bidColRight = document.createElement("div");
-    bidColRight.className = "col-6 d-flex align-items-center justify-content-end";
-    bidRow.append(bidColRight);
+      const bidColRight = document.createElement("div");
+      bidColRight.className = "col-6 d-flex align-items-center justify-content-end";
+      bidRow.append(bidColRight);
 
-    const bidInput = document.createElement("input");
-    bidInput.type = "text";
-    bidInput.className = "form-control form-control-sm py-0";
-    bidColRight.append(bidInput);
+      const bidInput = document.createElement("input");
+      bidInput.type = "text";
+      bidInput.className = "form-control form-control-sm py-0";
+      bidColRight.append(bidInput);
 
-    const bidCurrency = document.createElement("h5");
-    bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
-    bidCurrency.innerText = "CR";
-    bidColRight.append(bidCurrency);
+      const bidCurrency = document.createElement("h5");
+      bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
+      bidCurrency.innerText = "CR";
+      bidColRight.append(bidCurrency);
 
-    const submitButtonRow = document.createElement("div");
-    submitButtonRow.className = "row px-2 mt-3";
-    bidSectionContainer.append(submitButtonRow);
+      const submitButtonRow = document.createElement("div");
+      submitButtonRow.className = "row px-2 mt-3";
+      bidSectionContainer.append(submitButtonRow);
 
-    const submitButton = document.createElement("button");
-    submitButton.type = "button";
-    submitButton.className = "btn btn-primary h4 fs-4 text-white py-0 m-0";
-    submitButton.innerText = "Submit";
-    submitButtonRow.append(submitButton);
+      const submitButton = document.createElement("button");
+      submitButton.type = "button";
+      submitButton.className = "btn btn-primary h4 fs-4 text-white py-0 m-0";
+      submitButton.innerText = "Submit";
+      submitButtonRow.append(submitButton);
+    }
 
     const albumDetailsRow = document.createElement("div");
     albumDetailsRow.className = "row mt-5 pt-5";
