@@ -23,7 +23,6 @@ async function registerUser(url, userData) {
     };
     const response = await fetch(url, postData);
     const json = await response.json();
-    console.log(json);
 
     if (json.errors) {
       errorFeedback(json.errors, registerForm);
