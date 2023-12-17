@@ -1,9 +1,16 @@
 import { userProfileURL } from "./constants.mjs";
-import { fetchAvatar } from "./fetchAvatar.mjs";
+import { fetchProfileData } from "./fetchProfileData.mjs";
 
+/**
+ * Controls content accessibility for users based on their authentication status.
+ * It modifies the navigation bar by hiding the sign-in button, showing the new listing link,
+ * creating a user profile section, and adding a log-out option on the profile page.
+ * @example
+ * // To handle content access based on user authentication status
+ * handleContentAccess();
+ */
 function handleContentAccess() {
   if (localStorage.getItem("accessToken")) {
-    const username = localStorage.getItem("username");
     const navBar = document.getElementById("navbarCollapse");
     const signInButton = document.getElementById("sign-in-button");
     const navNewListing = document.getElementById("nav-new");
@@ -20,30 +27,10 @@ function handleContentAccess() {
     navProfile.className = "d-flex align-items-center my-2 my-md-0";
     navBar.append(navProfile);
 
-    const profileAvatar = document.createElement("img");
-    profileAvatar.id = "profile-avatar";
-    profileAvatar.className = "rounded-circle";
-    profileAvatar.alt = "Profile avatar";
-    navProfile.append(profileAvatar);
-
-    fetchAvatar(userProfileURL, profileAvatar);
-
-    const navName = document.createElement("a");
-    navName.id = "nav-name";
-    navName.className = "nav-link h4 ps-2 my-2 my-md-0";
-    navName.innerText = username;
-    navName.ariaCurrent = "page";
-    navProfile.append(navName);
-
-    const creditCount = document.createElement("h4");
-    creditCount.className = "h4 py-1 px-2 ms-5 my-2 my-md-0 bg-primary text-white";
-    creditCount.innerText = "XXXX €";
-    navProfile.append(creditCount);
+    fetchProfileData(userProfileURL, navProfile);
 
     const currentUrl = window.location.href;
     if (currentUrl.includes("/profile/")) {
-      navName.href = "#";
-
       const navLogOut = document.createElement("a");
       navLogOut.className = "nav-link h4 ms-5 my-2 my-md-0";
       navLogOut.innerText = "Log out";
@@ -56,10 +43,6 @@ function handleContentAccess() {
         localStorage.clear();
         window.location.href = navLogOut.href;
       });
-    } else if (currentUrl.includes("/auctions/") || currentUrl.includes("/new-listing/") || currentUrl.includes("/listing-details/")) {
-      navName.href = `../profile/index.html?id=${username}`;
-    } else {
-      navName.href = `profile/index.html?id=${username}`;
     }
   }
 }
