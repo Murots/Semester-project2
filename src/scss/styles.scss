@@ -1,0 +1,169 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  padding-top: 80px;
+}
+
+// h1=fs-1, h2=fs-2, h3,h4=fs-3, h5 = fs-5?,
+
+h1,
+h2,
+h4 {
+  font-family: "Lobster", sans-serif;
+  color: $primary;
+}
+
+h3 {
+  font-family: "Monoton", sans-serif;
+  letter-spacing: 1px;
+  text-shadow:
+    0.5px 0px 0 #ffffff,
+    0.5px 0.5px 0 #ffffff,
+    0.5px -0.5px 0 #ffffff,
+    0px -0.5px 0 #ffffff,
+    0px 0.5px 0 #ffffff,
+    -0.5px 0.5px 0 #ffffff,
+    -0.5px 0px 0 #ffffff,
+    -0.5px -0.5px 0 #ffffff;
+}
+
+h5,
+p,
+li,
+#sort-by-form {
+  font-family: "Libre Baskerville", serif;
+}
+
+.row {
+  max-width: 1100px;
+}
+
+#nav-profile {
+  img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-color: $body-color;
+  }
+  h4 {
+    border-radius: 0.375rem;
+  }
+}
+
+.banner-container {
+  #carouselExampleIndicators {
+    max-width: 600px;
+    max-height: 600px;
+    height: 100vw;
+    img {
+      object-fit: cover;
+      max-width: 600px;
+      max-height: 600px;
+      width: 100%;
+      filter: sepia(60%) hue-rotate(20deg) brightness(110%);
+    }
+    .custom-carousel-caption {
+      top: 15%;
+      bottom: auto;
+    }
+  }
+  .alternative-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+  }
+}
+
+.main-container {
+  #trending-container {
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  .add-images-container {
+    img {
+      max-width: 45vh;
+    }
+  }
+  #listings-container,
+  #your-content-container {
+    .auction-card {
+      aspect-ratio: 1 / 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 5%;
+    }
+    .overlay {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.65);
+      border-bottom-left-radius: 5%;
+      border-bottom-right-radius: 5%;
+    }
+    #your-bids-item {
+      border-radius: 2%;
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+  #details-container {
+    .details-image {
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 1 / 1;
+    }
+    .seller-profile {
+      width: 23px;
+      height: 23px;
+    }
+  }
+  .auction-card:hover,
+  #trending-album:hover,
+  #your-bids-item:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+  }
+}
+
+.footer-container {
+  .row {
+    max-width: 100%;
+    height: auto;
+    p {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.register-link,
+.error,
+.success {
+  font-size: 0.9em;
+}
+
+.error,
+.success {
+  border: 2px solid;
+  height: fit-content;
+}
+
+.error {
+  background-color: #8f28284d;
+  color: #810000;
+  border-color: #810000;
+}
+
+.success {
+  background-color: #c6f7c6;
+  border-color: #008000;
+}
+
+.here-link:hover {
+  color: red;
+}
