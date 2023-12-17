@@ -1,4 +1,9 @@
 import { deadlineConverter } from "../libraries/deadlineConverter.mjs";
+import { userProfileURL } from "../libraries/constants.mjs";
+import { fetchProfileData } from "../libraries/fetchProfileData.mjs";
+import { getBidValue } from "./makeBid.mjs";
+
+let bidInput;
 
 /**
  * Creates the HTML for displaying listing details.
@@ -180,46 +185,59 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
     sellerName.innerText = seller;
     sellerProfile.append(sellerName);
 
-    const bidSectionContainer = document.createElement("div");
-    bidSectionContainer.className = "mt-auto";
-    bidContentColumn.append(bidSectionContainer);
+    const username = localStorage.getItem("username");
+    if (username !== seller) {
+      const bidForm = document.createElement("form");
+      // bidForm.id = "bid-form";
+      bidForm.className = "mt-auto";
+      bidContentColumn.append(bidForm);
 
-    const bidRow = document.createElement("div");
-    bidRow.className = "row mt-4 mt-md-0";
-    bidSectionContainer.append(bidRow);
+      const bidRow = document.createElement("div");
+      bidRow.className = "row mt-4 mt-md-0";
+      bidForm.append(bidRow);
 
-    const bidColLeft = document.createElement("div");
-    bidColLeft.className = "col-6 d-flex align-items-center pe-0";
-    bidRow.append(bidColLeft);
+      const bidColLeft = document.createElement("div");
+      bidColLeft.className = "col-6 d-flex align-items-center pe-0";
+      bidRow.append(bidColLeft);
 
-    const bidHeading = document.createElement("h5");
-    bidHeading.className = "fs-3 fw-bold m-0";
-    bidHeading.innerText = "Place bid:";
-    bidColLeft.append(bidHeading);
+      const bidHeading = document.createElement("h5");
+      bidHeading.className = "fs-3 fw-bold m-0";
+      bidHeading.innerText = "Place bid:";
+      bidColLeft.append(bidHeading);
 
-    const bidColRight = document.createElement("div");
-    bidColRight.className = "col-6 d-flex align-items-center justify-content-end";
-    bidRow.append(bidColRight);
+      const bidColRight = document.createElement("div");
+      bidColRight.id = "bid-col-right";
+      bidColRight.className = "col-6 d-flex align-items-center justify-content-end";
+      bidRow.append(bidColRight);
 
-    const bidInput = document.createElement("input");
-    bidInput.type = "text";
-    bidInput.className = "form-control form-control-sm py-0";
-    bidColRight.append(bidInput);
+      createBidInput(userProfileURL, bidColRight);
 
-    const bidCurrency = document.createElement("h5");
-    bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
-    bidCurrency.innerText = "CR";
-    bidColRight.append(bidCurrency);
+      const bidCurrency = document.createElement("h5");
+      bidCurrency.className = "fs-3 fw-bold ms-2 mb-0";
+      bidCurrency.innerText = "CR";
+      bidColRight.append(bidCurrency);
 
-    const submitButtonRow = document.createElement("div");
-    submitButtonRow.className = "row px-2 mt-3";
-    bidSectionContainer.append(submitButtonRow);
+      const submitButtonRow = document.createElement("div");
+      submitButtonRow.className = "row px-2 mt-3";
+      bidForm.append(submitButtonRow);
 
-    const submitButton = document.createElement("button");
-    submitButton.type = "button";
-    submitButton.className = "btn btn-primary h4 fs-4 text-white py-0 m-0";
-    submitButton.innerText = "Submit";
-    submitButtonRow.append(submitButton);
+      const submitButton = document.createElement("button");
+      submitButton.type = "submit";
+      submitButton.className = "btn btn-primary h4 fs-4 text-white py-0 m-0";
+      submitButton.innerText = "Submit";
+      submitButtonRow.append(submitButton);
+
+      bidForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const listingID = listing.id;
+        console.log(listingID);
+
+        if (bidInput.value) {
+          getBidValue(event, listingID, bidInput.value, bidForm);
+        }
+      });
+    }
 
     const albumDetailsRow = document.createElement("div");
     albumDetailsRow.className = "row mt-5 pt-5";
@@ -316,5 +334,26 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
     viewBidsRow.append(viewBidsLink);
   } catch (error) {
     console.error(error);
+  }
+}
+
+async function createBidInput(url, bidColRight) {
+  try {
+    const profile = await fetchProfileData(url);
+    const profileCredits = profile.credits;
+
+    bidInput = document.createElement("input");
+    bidInput.type = "number";
+    bidInput.id = "input-bid";
+    bidInput.placeholder = "Credits";
+    bidInput.ariaLabel = "Enter your bid";
+    bidInput.min = "1";
+    bidInput.max = profileCredits;
+    bidInput.required = true;
+    bidInput.autofocus = true;
+    bidInput.className = "form-control form-control-sm py-0";
+    bidColRight.prepend(bidInput);
+  } catch (error) {
+    console.error("Error in createProfileContent:", error);
   }
 }

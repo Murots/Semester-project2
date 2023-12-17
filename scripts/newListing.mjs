@@ -67,7 +67,6 @@ newListingForm.addEventListener("submit", createListingData);
  */
 async function saveListing(url, listingData) {
   try {
-    console.log(listingData);
     const json = await fetchWithToken(url, "POST", listingData);
 
     if (json.id) {

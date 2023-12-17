@@ -19,10 +19,3 @@ export function errorFeedback(errors, formElement) {
   errorMessage.innerText = errors[0].message;
   formElement.append(errorMessage);
 }
-
-// export function errorFeedback(errors, formElement) {
-//   const errorMessage = document.createElement("p");
-//   errorMessage.classList.add("error", "p-1", "m-3");
-//   errorMessage.innerText = errors[0].message;
-//   formElement.append(errorMessage);
-// }
