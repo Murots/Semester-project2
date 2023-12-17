@@ -335,6 +335,16 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
   }
 }
 
+/**
+ * Asynchronously creates and prepends an input field for bidding in a specified container.
+ * The function fetches the user's profile data, including their credits, to set the maximum bid amount.
+ * @param {string} url
+ * @param {HTMLElement} bidColRight
+ * @returns {void}
+ * @example
+ * const bidColumn = document.getElementById('bid-column');
+ * createBidInput('https://api.example.com/profile', bidColumn);
+ */
 async function createBidInput(url, bidColRight) {
   try {
     const profile = await fetchProfileData(url);

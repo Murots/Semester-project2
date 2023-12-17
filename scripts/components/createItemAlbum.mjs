@@ -1,3 +1,7 @@
+/**
+ * Creates the HTML for displaying album images.
+ * @returns {void}
+ */
 export function addImageCard() {
   const imageLinkInput = document.getElementById("inputImageLink");
 

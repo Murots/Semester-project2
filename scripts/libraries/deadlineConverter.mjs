@@ -1,3 +1,8 @@
+/**
+ * Converts value to a more easy and readable date and time
+ * @param {string} deadlineString
+ * @returns {string}
+ */
 export function deadlineConverter(deadlineString) {
   const deadline = new Date(deadlineString);
   return deadline.toLocaleDateString("en-GB", {

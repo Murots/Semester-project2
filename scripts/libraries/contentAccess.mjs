@@ -49,6 +49,11 @@ function handleContentAccess() {
 
 handleContentAccess();
 
+/**
+ * Creates and appends/prepends profile content elements to a navigation profile container(s) in the Auction list.
+ * @param {string} url
+ * @param {HTMLElement} navProfile}
+ */
 async function createProfileContent(url, navProfile) {
   try {
     const profile = await fetchProfileData(url);
