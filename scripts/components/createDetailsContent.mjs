@@ -188,7 +188,6 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
     const username = localStorage.getItem("username");
     if (username !== seller) {
       const bidForm = document.createElement("form");
-      // bidForm.id = "bid-form";
       bidForm.className = "mt-auto";
       bidContentColumn.append(bidForm);
 
@@ -231,7 +230,6 @@ export function createDetailsContent(listing, detailsContainer, bidHistoryModal)
         event.preventDefault();
 
         const listingID = listing.id;
-        console.log(listingID);
 
         if (bidInput.value) {
           getBidValue(event, listingID, bidInput.value, bidForm);

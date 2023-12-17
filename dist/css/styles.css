@@ -11942,6 +11942,14 @@ li,
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%;
 }
+.main-container #listings-container #your-bids-item,
+.main-container #your-content-container #your-bids-item {
+  border-radius: 2%;
+}
+.main-container #listings-container #your-bids-item img,
+.main-container #your-content-container #your-bids-item img {
+  max-width: 150px;
+}
 .main-container #details-container .details-image {
   object-fit: cover;
   object-position: center;
@@ -11952,7 +11960,8 @@ li,
   height: 23px;
 }
 .main-container .auction-card:hover,
-.main-container #trending-album:hover {
+.main-container #trending-album:hover,
+.main-container #your-bids-item:hover {
   transform: scale(1.03);
   transition: transform 0.3s ease;
 }

@@ -1,4 +1,5 @@
 import { userProfileURL } from "./libraries/constants.mjs";
+import { createYourBidsList } from "./components/createYourBidsList.mjs";
 import { createListingHTML } from "./libraries/createListing.mjs";
 import { errorMessage } from "./libraries/errorMessage.mjs";
 import { fetchWithToken } from "./services/doFetch.mjs";
@@ -25,11 +26,9 @@ yourBids.addEventListener("click", function () {
   spinner.classList.remove("d-none");
   yourBids.classList.add("active");
   yourListings.classList.remove("active");
-  yourContentURL = userProfileURL + "/bids?_tag=OldSchoolAuctions";
+  yourContentURL = userProfileURL + "/bids?_listings=true&_tag=OldSchoolAuctions=true";
   main();
 });
-
-console.log("Initial URL:", yourContentURL);
 
 /**
  * Retrieves listings with authentication token based on the unique tag.
@@ -60,7 +59,11 @@ async function getProfileContent(url) {
  */
 function createListings(yourContent, container) {
   yourContent.forEach((content) => {
-    createListingHTML(content, container);
+    if (content.title) {
+      createListingHTML(content, container);
+    } else {
+      createYourBidsList(content, container);
+    }
   });
 }
 

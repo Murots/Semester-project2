@@ -105,6 +105,12 @@ li,
       border-bottom-left-radius: 5%;
       border-bottom-right-radius: 5%;
     }
+    #your-bids-item {
+      border-radius: 2%;
+      img {
+        max-width: 150px;
+      }
+    }
   }
   #details-container {
     .details-image {
@@ -118,7 +124,8 @@ li,
     }
   }
   .auction-card:hover,
-  #trending-album:hover {
+  #trending-album:hover,
+  #your-bids-item:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease;
   }

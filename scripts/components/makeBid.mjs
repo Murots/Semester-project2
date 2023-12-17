@@ -42,12 +42,10 @@ export function getBidValue(event, listingID, bidValue, bidForm) {
 
   const makeBidURL = listingsURL + "/" + listingID + "/bids";
   const amount = parseFloat(bidValue);
-  console.log(amount);
 
   const bidToMake = {
     amount,
   };
 
-  console.log(bidToMake);
   makeBid(makeBidURL, bidToMake, bidForm);
 }
