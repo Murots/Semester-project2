@@ -41,7 +41,12 @@ https://github.com/Murots/Workflow_ca/tree/workflow
 
 #### References
 
-- Pictures are my own
+- Pictures are my own, exept:
+
+1. Harrison, B. (2018). woman sitting beside swimming pool
+   Available at: https://unsplash.com/photos/woman-sitting-beside-swimming-pool-zRg1OJUkPZg [Accessed 12 Dec. 2023]
+2. And one more (shoes out of the window), where I cant find back to the source. Im very sorry.
+
 - Figma
 - Iconify (figma widget)
 - ChatGPT as sparring partner.
