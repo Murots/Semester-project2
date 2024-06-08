@@ -35,7 +35,7 @@ function handleContentAccess() {
       navLogOut.className = "nav-link h4 ms-5 my-2 my-md-0";
       navLogOut.innerText = "Log out";
       navLogOut.ariaCurrent = "page";
-      navLogOut.href = "../index.html";
+      navLogOut.href = "../../index.html";
       navProfile.append(navLogOut);
 
       navLogOut.addEventListener("click", function (event) {
@@ -80,7 +80,7 @@ async function createProfileContent(url, navProfile) {
     } else if (currentUrl.includes("/auctions/") || currentUrl.includes("/new-listing/") || currentUrl.includes("/listing-details/")) {
       profileName.href = `../profile/index.html?id=${profileUser}`;
     } else {
-      profileName.href = `profile/index.html?id=${profileUser}`;
+      profileName.href = `./html/profile/index.html?id=${profileUser}`;
     }
 
     const creditCount = document.createElement("h4");

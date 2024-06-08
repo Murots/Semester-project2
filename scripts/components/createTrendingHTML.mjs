@@ -23,7 +23,7 @@ export function createTrendingHTML(listingData, trendingContainer) {
     let imageDiv;
     imageDiv = document.createElement("a");
     if (localStorage.getItem("accessToken")) {
-      imageDiv.href = `listing-details/index.html?id=${listingID}`;
+      imageDiv.href = `./html/listing-details/index.html?id=${listingID}`;
     } else {
       imageDiv.href = "#";
       imageDiv.setAttribute("data-bs-toggle", "modal");
