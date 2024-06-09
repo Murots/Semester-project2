@@ -36,6 +36,8 @@ To compile Sass to CSS: npm run build
 
 Start the development server with live reloading: npm run watch
 
+NB: Use "...@stud.noroff.no" as email when registering a site account.
+
 ## Contributing
 
 Not open for contributions
