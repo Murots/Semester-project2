@@ -26,15 +26,15 @@ Old School Auctions is a niche e-commerce platform focused on the buying and sel
 
 ### Installing
 
-Clone the repository: git clone https://github.com/Murots/Semester-project2
+1. Clone the repository: git clone https://github.com/Murots/Semester-project2
 
-Install dependencies: npm install
+2. Install dependencies: npm install
 
 ### Running
 
-To compile Sass to CSS: npm run build
+1. To compile Sass to CSS: npm run build
 
-Start the development server with live reloading: npm run watch
+2. Start the development server with live reloading: npm run watch
 
 NB: Use "...@stud.noroff.no" as email when registering a site account.
 
